@@ -4,17 +4,9 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-map
 export const Map = withScriptjs(withGoogleMap((props) =>
     <GoogleMap
         defaultZoom={17}
-        defaultCenter={{ lat: 42.678119305642355, lng: -71.57866338780913 }}
+        defaultCenter={{ lat: 42.35739537041983, lng: -71.05960403766282 }}
     >
-    {props.isMarkerShown && <Marker position={{ lat: 42.678119305642355, lng: -71.57866338780913 }} />}
-    </GoogleMap>
-))
-
-export const BrooklineMap = withScriptjs(withGoogleMap((props) =>
-    <GoogleMap
-        defaultZoom={17}
-        defaultCenter={{ lat: 42.72339897913884, lng: -71.66212418666909 }}
-    >
-    {props.isMarkerShown && <Marker position={{ lat: 42.72339897913884, lng: -71.66212418666909 }} />}
+    {props.isMarkerShown && <Marker position={{ lat: 42.35739537041983, lng: -71.05960403766282 }} label={"The Hub Pub"} />}
+    {props.isMarkerShown && <Marker position={{ lat: 42.35728430266154, lng: -71.0610939826688 }} label={"Beantown Pub"} />}
     </GoogleMap>
 ))

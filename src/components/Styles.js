@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const config = require('./../config.json')
 
-const COLORS = config.drdavisicecream.colors
+const COLORS = config.thehubpub.colors
 
 export const StyledLink = styled.div`
     a {
@@ -341,17 +341,18 @@ export const StyledHero = styled.div`
     height: 420px;
     display: flex;
     flex-flow: column wrap;
-    background-image: url(${props => props.image || "https://static.dev.beantownpub.com/img/drdavisicecream_hero_header.jpg"});
-    background-size: cover;
+    background-image: url(${props => props.image || "https://static.dev.beantownpub.com/img/thehubpub_hero_header.jpg"});
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
     h1 {
-        margin: .5rem auto;
+        margin: auto;
         max-width: 80%;
         font-family: gotham-narrow-ultra;
-        font-size: 3.5rem;
+        font-size: 3.25rem;
         text-transform: uppercase;
         letter-spacing: .2em;
-        color: ${COLORS.cyan};
+        color: ${COLORS.white};
         text-shadow: 2px 2px 8px #000000;
         line-height: 150%;
     }

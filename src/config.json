@@ -1,16 +1,16 @@
 {
-    "drdavisicecream": {
+    "thehubpub": {
         "static_url": "https://static.dev.beantownpub.com",
         "urls": {
             "googleApi": "https://maps.googleapis.com/maps/api/",
             "contactApi": "https://contact-api.jalgraves.com/v1/contact/beantown",
             "static": "https://static.dev.beantownpub.com",
-            "facebook": "https://www.facebook.com/Doc-Davis-Ice-Cream-Stand-115542725133788/",
-            "instagram": "https://www.instagram.com/drdavisicecream/",
-            "twitter": "https://twitter.com/DrDavisIceCream"
+            "facebook": "https://www.facebook.com/HubPub/",
+            "instagram": "https://www.instagram.com/thehubpub/",
+            "twitter": "https://twitter.com/thehubpub"
         },
         "colors": {
-            "yellow": "rgb(252,204,18)",
+            "yellow": "#fcba03",
             "gray": "#494040",
             "red": "#c70039",
             "navBarBlue": "rgba(5,46,102,0.90)",
@@ -26,7 +26,7 @@
                 "name": "index",
                 "icon": "faHome",
                 "text": "Home",
-                "title": "Dr. Davis Ice Cream",
+                "title": "The Hub Pub",
                 "keywords": "",
                 "description": "",
                 "menu_list": true,
@@ -38,7 +38,7 @@
                 "text": "About",
                 "title": "About ALG",
                 "keywords": "",
-                "description": "Information about Dr. Davis Ice Cream",
+                "description": "Information about The Hub Pub",
                 "menu_list": true,
                 "top_menu": true
             },
@@ -46,9 +46,9 @@
                 "name": "contact",
                 "icon": "faEnvelope",
                 "text": "Contact",
-                "title": "Contact ALG",
+                "title": "Contact The Hub Pub",
                 "keywords": "",
-                "description": "Contact information for Dr. Davis Ice Cream",
+                "description": "Contact information for The Hub Pub",
                 "menu_list": true,
                 "top_menu": true
             },
@@ -56,34 +56,24 @@
                 "name": "menu",
                 "icon": "faUtensils",
                 "text": "Menu",
-                "title": "Doc's Menu",
+                "title": "The Hub Pub's Menu",
                 "keywords": "",
-                "description": "Dr. Davis Ice Cream food menu",
-                "menu_list": true,
-                "top_menu": true
+                "description": "The Hub Pub food menu",
+                "menu_list": false,
+                "top_menu": false
             },
             "parties": {
                 "name": "parties",
                 "icon": "faUsers",
                 "text": "Parties",
-                "title": "Ice Cream Parties",
+                "title": "Private Parties",
                 "keywords": "",
-                "description": "Dr. Davis Ice Cream parties",
-                "menu_list": true,
-                "top_menu": true
-            },
-            "flavors": {
-                "name": "flavors",
-                "icon": "faStar",
-                "text": "Flavors",
-                "title": "Ice Cream Flavors",
-                "keywords": "",
-                "description": "Doc's ice cram flavors",
-                "menu_list": true,
-                "top_menu": true
+                "description": "The Hub Pub private parties",
+                "menu_list": false,
+                "top_menu": false
             },
             "facebook": {
-                "name": "https://www.facebook.com/DrDavisIceCream/",
+                "name": "https://www.facebook.com/thehubpub/",
                 "icon": "faFacebook",
                 "text": "Facebook",
                 "title": "",
@@ -93,7 +83,7 @@
                 "top_menu": false
             },
             "instagram": {
-                "name": "https://www.instagram.com/drdavisicecream/",
+                "name": "https://www.instagram.com/thehubpub/",
                 "icon": "faInstagram",
                 "text": "Instagram",
                 "title": "",
@@ -103,7 +93,7 @@
                 "top_menu": false
             },
             "twitter": {
-                "name": "https://twitter.com/DrDavisIceCream",
+                "name": "https://twitter.com/thehubpub",
                 "icon": "faTwitter",
                 "text": "Twitter",
                 "title": "",

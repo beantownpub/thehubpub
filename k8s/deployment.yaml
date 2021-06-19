@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: docsicecream-frontend
+  name: thehubpub
   namespace: default
 spec:
   progressDeadlineSeconds: 600
@@ -9,7 +9,7 @@ spec:
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app: docsicecream-frontend
+      app: thehubpub
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -18,12 +18,12 @@ spec:
   template:
     metadata:
       labels:
-        app: docsicecream-frontend
+        app: thehubpub
     spec:
       containers:
-      - image: jalgraves/docsicecream_frontend:latest
+      - image: jalgraves/thehubpub:latest
         imagePullPolicy: Always
-        name: docsicecream-frontend
+        name: thehubpub-frontend
         ports:
         - containerPort: 3034
           name: tcp-frontend

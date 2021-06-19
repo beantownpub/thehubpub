@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: docsicecream-frontend
+  name: thehubpub
   namespace: default
 spec:
   ports:
-  - name: tcp-docsicecream-frontend
+  - name: tcp-thehubpub
     port: 80
-    targetPort: 3034
+    targetPort: 3037
   selector:
-    app: docsicecream-frontend
+    app: thehubpub

@@ -1,19 +1,19 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: docsicecream-ingress
+  name: thehubpub-ingress
   namespace: default
 spec:
   rules:
-  - host: www.drdavisicecream.com
+  - host: www.thehubpub.com
     http:
       paths:
       - backend:
-          serviceName: docsicecream-frontend
-          servicePort: 3034
-  - host: drdavisicecream.com
+          serviceName: thehubpub
+          servicePort: 3037
+  - host: thehubpub.com
     http:
       paths:
       - backend:
-          serviceName: docsicecream-frontend
-          servicePort: 3034
+          serviceName: thehubpub
+          servicePort: 3037

@@ -7,10 +7,6 @@ import {
     StyledHero,
     StyledFooter } from './Styles'
 
-const config = require('./../config.json')
-const STATIC_URL = config.drdavisicecream.static_url
-const COLORS = config.drdavisicecream.colors
-
 export const InfoSection = (props) => {
     return (
         <StyledInfo
@@ -45,9 +41,7 @@ export const LinkButton = (props) => {
 export const HeroHeader = () => {
     return (
         <StyledHero>
-            <img src={STATIC_URL + "/img/logos/drdavisicecream_second_logo.gif"}  alt="Doc's ice cream logo" />
-            <h5>Making and serving our own ice cream for over 80 years!</h5>
-            <h1>Home of the Doc's Special</h1>
+            <h1>The Friendliest Pub in the Hub!</h1>
         </StyledHero>
     )
 }
@@ -65,13 +59,12 @@ export const Footer = () => {
     return (
         <StyledFooter fontColor="white" backgroundColor="transparent">
             <footer>
-                <h4>Family Owned and Operated</h4>
-                <img src="https://static.dev.beantownpub.com/img/logos/drdavisicecream_logo.png" alt="Doc's ice cream logo" />
-                <h3>67 Hollis St. Pepperell MA</h3>
-                <h2>Call: 978-433-9374</h2>
+                <img src="https://static.dev.beantownpub.com/img/logos/thehubpub_logo.png" alt="The hub pub logo" />
+                <h3>18 Province Street Boston, MA 02108</h3>
+                <h2>Call: 617-227-8952</h2>
                 <h2>Stay Connected</h2>
                 <SocialNav/>
-                <h2>{'© ' + year} Dr. Davis Ice Cream</h2>
+                <h2>{'© ' + year} The Hub Pub </h2>
             </footer>
         </StyledFooter>
     )

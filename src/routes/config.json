@@ -3,23 +3,23 @@
         "home": {
             "template": "index",
             "metadata": {
-                "title": "Dr. Davis Ice Cream",
-                "description": "Doc's Ice Cream Pepperell Massachusetts, making and serving our own ice cream for over 80 years!",
-                "keywords": "ice cream, homemade, desserts, pepperell, massachusetts, sundaes, milkshakes, frappes, soft-serve"
+                "title": "The Hub Pub",
+                "description": "The friendliest pub in the hub!",
+                "keywords": "bar, cocktails, beer, wine, freedom trail, boston, masssachusetts, pub, pool"
             }
         },
         "menu": {
             "template": "menu",
             "metadata": {
-                "title": "Doc's Menu",
-                "description": "Dr. Davis Ice Cream Menu",
-                "keywords": "ice cream, homemade, desserts"
+                "title": "Hub Pub's Menu",
+                "description": "The Hub Pub Menu",
+                "keywords": "bar, cocktails, beer, wine, freedom trail, boston, masssachusetts, pub, pool"
             }
         },
         "about": {
             "template": "about",
             "metadata": {
-                "title": "About Doc's",
+                "title": "About The Hub Pub",
                 "description": "",
                 "keywords": ""
             }
@@ -27,7 +27,7 @@
         "contact": {
             "template": "contact",
             "metadata": {
-                "title": "Contact Doc's",
+                "title": "Contact The Hub Pub",
                 "description": "",
                 "keywords": ""
             }
@@ -35,23 +35,15 @@
         "parties": {
             "template": "parties",
             "metadata": {
-                "title": "Ice Cream Parties",
+                "title": "Private Parties",
                 "description": "",
                 "keywords": ""
-            }
-        },
-        "flavors": {
-            "template": "flavors",
-            "metadata": {
-                "title": "Doc's Ice Cream Flavors",
-                "description": "",
-                "keywords": "chocolate, vanilla, strawberry, coffee"
             }
         },
         "faq": {
             "template": "faq",
             "metadata": {
-                "title": "Doc's FAQ",
+                "title": "Hub Pub FAQ",
                 "description": "",
                 "keywords": ""
             }

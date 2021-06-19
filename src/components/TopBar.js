@@ -4,7 +4,7 @@ import MenuIcon, { getIcon } from './icons'
 
 const config = require('./../config.json')
 const slide = require('./menuSlide')
-const COLORS = config.drdavisicecream.colors
+const COLORS = config.thehubpub.colors
 
 export function linkProps(pages, menuType) {
     const props = []
