@@ -5,7 +5,7 @@ image_name ?= thehubpub
 version ?= $(shell jq .version package.json)
 
 sass:
-		sass ${PWD}/src/sass/jal.sass ${PWD}/dist/public/css/style.css
+		sass ${PWD}/src/sass/thehubpub.sass ${PWD}/dist/public/css/style.css
 
 stop:
 		docker rm -f $(image_name) || true

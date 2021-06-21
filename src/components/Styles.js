@@ -179,14 +179,17 @@ export const StyledSlideMenu = styled.div`
             font-weight: 700;
             letter-spacing: .15em;
             text-decoration: none;
-            color: ${COLORS.yellow};
-            font-family: 'Raleway', Arial, sans-serif;
+            color: ${COLORS.white};
+            font-family: satisfy;
         }
     }
     .menu_list {
         font-size: 1rem;
-        border: 1px solid #1f6696;
+        border: ${props => props.menuListBorder || "1px solid whitesmoke"};
         border-radius: .5rem;
+        a {
+            color: ${props => props.menuListFontColor || "whitesmoke"};
+        }
     }
     .menuHead & {
         width: min-content;
@@ -216,7 +219,7 @@ export const StyledNavBar = styled.div`
         top: 1rem;
     }
     h2 {
-        color: ${COLORS.blue};
+        color: ${COLORS.white};
         font-family: 'Raleway', Arial, sans-serif;
     }
 `
@@ -231,6 +234,7 @@ export const StyledInfo = styled.div`
     padding-left: ${props => props.paddingLeft || "4rem"};
     padding-right: ${props => props.paddingRight || "1rem"};
     background-color: ${props => props.color || "#F3F4F4"};
+    border-top: ${props => props.borderTop || "unset"};
     width: 100vw;
     display: flex;
     flex-flow: column wrap;
@@ -243,7 +247,9 @@ export const StyledInfo = styled.div`
         max-width: 80%;
         font-size: 2.5em;
         font-family: gotham-narrow-ultra;
+        text-transform: uppercase;
         line-height: 170%;
+        letter-spacing: .5rem;
     }
     h2 {
         padding: .5rem 0;
@@ -262,7 +268,7 @@ export const StyledInfo = styled.div`
         font-family: gotham-narrow-ultra;
         font-size: 2em;
         line-height: 170%;
-        letter-spacing: .25rem;
+        letter-spacing: .35rem;
     }
     h4 {
         padding: .5rem 0;
@@ -276,7 +282,7 @@ export const StyledInfo = styled.div`
         padding: .5rem 0;
         max-width: 40rem;
         font-family: satisfy;
-        font-size: 1.75rem;
+        font-size: 2.75rem;
         letter-spacing: unset;
         text-transform: none;
         line-height: 170%;
@@ -291,7 +297,7 @@ export const StyledInfo = styled.div`
     }
     a {
         text-decoration: none;
-        color: ${COLORS.cyan};
+        color: ${COLORS.white};
         font-family: gotham-medium;
         text-transform: capitalize;
     }
@@ -341,7 +347,7 @@ export const StyledHero = styled.div`
     height: 420px;
     display: flex;
     flex-flow: column wrap;
-    background-image: url(${props => props.image || "https://static.dev.beantownpub.com/img/thehubpub_hero_header.jpg"});
+    background-image: url(${props => props.image || "/images/thehubpub_hero_header.jpg"});
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;

@@ -53,14 +53,14 @@
                 "top_menu": true
             },
             "menu": {
-                "name": "menu",
+                "name": "/hubpub_menu.pdf",
                 "icon": "faUtensils",
                 "text": "Menu",
                 "title": "The Hub Pub's Menu",
                 "keywords": "",
                 "description": "The Hub Pub food menu",
-                "menu_list": false,
-                "top_menu": false
+                "menu_list": true,
+                "top_menu": true
             },
             "parties": {
                 "name": "parties",

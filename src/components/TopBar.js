@@ -78,7 +78,7 @@ export class TopMenuBar extends React.Component {
                             {this.props.menuList}
                         </div>
                         {closeButton()}
-                        <h2>Est. 1939</h2>
+                        <h2>The Friendliest Pub in the Hub!</h2>
                     </div>
                 </StyledSlideMenu>
                 {openButton()}

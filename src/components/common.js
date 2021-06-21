@@ -17,7 +17,8 @@ export const InfoSection = (props) => {
             paddingTop={props.paddingTop}
             paddingBottom={props.paddingBottom}
             paddingLeft={props.paddingLeft}
-            paddingRight={props.paddingRight}>{props.children}</StyledInfo>
+            paddingRight={props.paddingRight}
+            borderTop={props.borderTop}>{props.children}</StyledInfo>
     )
 }
 
@@ -59,7 +60,7 @@ export const Footer = () => {
     return (
         <StyledFooter fontColor="white" backgroundColor="transparent">
             <footer>
-                <img src="https://static.dev.beantownpub.com/img/logos/thehubpub_logo.png" alt="The hub pub logo" />
+                <img src="/images/logos/thehubpub_logo.png" alt="The Hub Pub logo" />
                 <h3>18 Province Street Boston, MA 02108</h3>
                 <h2>Call: 617-227-8952</h2>
                 <h2>Stay Connected</h2>
