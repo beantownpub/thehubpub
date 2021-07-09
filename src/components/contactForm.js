@@ -2,10 +2,8 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import MenuIcon, { getIcon } from './icons'
 import { ViewButton } from './merch/buttons'
-import { StyledContactForm } from './styles/pageStyles'
+import { StyledContactForm } from './styles/formStyles'
 
-const config = require('../config.json')
-// const apiUrl = process.env.CONTACT_API_URL || config.beantown.urls.contactApi
 const apiUrl = 'https://contact-api.dev.jalgraves.com/v1/contact/beantown'
 const contactReply = 'Request Received! We will respond to you as soon as we can. Thanks!'
 
