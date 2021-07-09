@@ -29,6 +29,30 @@ export const MainInfo = () => {
     )
 }
 
+const faq = () => {
+    return (
+        <section>
+            <h3>Frequently Asked Questions</h3>
+            <h4>Do you accept credit cards yes?</h4>
+            <p>Yes.</p>
+            <h4>Do you take reservations?</h4>
+            <p>No, but we do offer private parties for larger gatherings.</p>
+            <h4>What time do you serve food 'til?</h4>
+            <p>12:00 am, though subject to change based on demand.</p>
+            <h4>How many t.v.s do you have?</h4>
+            <p>A lot! There is a large projection screen and many big screens scattered throughout the rest of the bar.</p>
+            <h4>Can you put my game on?</h4>
+            <p>Most likely, if it's available.</p>
+            <h4>Do you have takeout?</h4>
+            <p>Yes</p>
+            <h4>How much does pool cost?</h4>
+            <p>Pool tables are coin operated and are &#65284;2.50 a game, there are change machines located in the pool area. Pool tables are first come first serve.</p>
+            <h4>Can I have a job?</h4>
+            <p>If you would like to apply for a job please come see us in person.</p>
+        </section>
+    )
+}
+
 export const AboutInfo = () => {
     return (
         <div>
@@ -45,27 +69,23 @@ export const AboutInfo = () => {
                 </section>
             </InfoSection>
             <InfoSection bgColor="#383838" fontColor='#fcba03'>
-                <section>
-                    <h3>Frequently Asked Questions</h3>
-                    <h4>Do you accept credit cards yes?</h4>
-                    <p>Yes.</p>
-                    <h4>Do you take reservations?</h4>
-                    <p>No, but we do offer private parties for larger gatherings.</p>
-                    <h4>What time do you serve food 'til?</h4>
-                    <p>12:00 am, though subject to change based on demand.</p>
-                    <h4>How many t.v.s do you have?</h4>
-                    <p>A lot! There is a large projection screen and many big screens scattered throughout the rest of the bar.</p>
-                    <h4>Can you put my game on?</h4>
-                    <p>Most likely, if it's available.</p>
-                    <h4>Do you have takeout?</h4>
-                    <p>Yes</p>
-                    <h4>How much does pool cost?</h4>
-                    <p>Pool tables are coin operated and are &#65284;2.50 a game, there are change machines located in the pool area. Pool tables are first come first serve.</p>
-                    <h4>Can I have a job?</h4>
-                    <p>If you would like to apply for a job please come see us in person.</p>
-                </section>
+                {faq()}
             </InfoSection>
         </div>
+    )
+}
+
+const contactInfo = () => {
+    return (
+        <section>
+            <h3>Email</h3>
+            <h2>hubpubboston@gmail.com</h2>
+            <h3>Call</h3>
+            <h2>617-227-8952</h2>
+            <h3>Address</h3>
+            <h2>18 Province Street<br />Boston MA, 02108</h2>
+            <h6>MRJ INC. HUB PUB DBA</h6>
+        </section>
     )
 }
 
@@ -74,15 +94,7 @@ export const ContactInfo = () => {
     return (
         <div>
         <InfoSection bgColor={COLORS.softGray}>
-            <section>
-                <h3>Email</h3>
-                <h2>hubpubboston@gmail.com</h2>
-                <h3>Call</h3>
-                <h2>617-227-8952</h2>
-                <h3>Address</h3>
-                <h2>18 Province Street<br />Boston MA, 02108</h2>
-                <h6>MRJ INC. HUB PUB DBA</h6>
-            </section>
+            {contactInfo()}
         </InfoSection>
         <InfoSection bgColor='#383838'>
             <Map
@@ -93,31 +105,6 @@ export const ContactInfo = () => {
                 mapElement={<div style={{ height: `100%` }} />}
             />
         </InfoSection>
-        </div>
-    )
-}
-
-export const FAQ = () => {
-    return (
-        <div>
-            <InfoSection bgColor={COLORS.softGray} marginTop='5rem'>
-                <section>
-                    <article>
-                    Frequently Asked Questions
-                    </article>
-                </section>
-            </InfoSection>
-            <InfoSection bgColor={COLORS.softGray} fontColor='#000000'>
-                <section>
-                    <h3>Frequently Asked Questions</h3>
-                    <h4>Do you accept credit cards yes?</h4>
-                    <p>Yes.</p>
-                    <h4>Do you have a public restroom?</h4>
-                    <p>No.</p>
-                    <h4>Can I have a job?</h4>
-                    <p>If you would like to apply for a job please come see us in person.</p>
-                </section>
-            </InfoSection>
         </div>
     )
 }

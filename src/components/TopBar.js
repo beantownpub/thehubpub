@@ -1,5 +1,6 @@
 import React from 'react'
-import { StyledCloseMenu, StyledHamburger, StyledSlideMenu, StyledTopNav, StyledNavBar, StyledLink } from './Styles'
+import { StyledTopNav, StyledNavBar, StyledLink } from './styles/navStyles'
+import { StyledCloseMenu, StyledHamburger, StyledSlideMenu } from './styles/menuStyles'
 import MenuIcon, { getIcon } from './icons'
 
 const config = require('./../config.json')

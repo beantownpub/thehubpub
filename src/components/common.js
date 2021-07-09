@@ -5,7 +5,7 @@ import {
     StyledInfo,
     StyledLinkButton,
     StyledHero,
-    StyledFooter } from './Styles'
+    StyledFooter } from './styles/pageStyles'
 
 export const InfoSection = (props) => {
     return (
