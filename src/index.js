@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { MainInfo, AboutInfo, ContactInfo } from './components/pages'
+import { MainInfo, AboutInfo, ContactInfo, PrivateParties } from './components/pages'
 import { HeroHeader, Footer } from './components/common'
 import { TopMenuBar, LinkList, TopNavBar, linkProps } from './components/TopBar'
 require('dotenv').config()
@@ -66,6 +66,13 @@ if (document.getElementById('aboutInfo')) {
     ReactDOM.render(
         <AboutInfo/>,
         document.getElementById('aboutInfo')
+    )
+}
+
+if (document.getElementById('privateParties')) {
+    ReactDOM.render(
+        <PrivateParties/>,
+        document.getElementById('privateParties')
     )
 }
 

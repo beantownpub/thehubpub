@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import MenuIcon, { getIcon } from './icons'
-import { ViewButton } from './merch/buttons'
-import { StyledContactForm } from './Styles'
+import MenuIcon, { getIcon } from '../icons'
+import { ViewButton } from './buttons'
+import { StyledContactForm } from './styles'
 
-const config = require('../config.json')
+// const config = require('../config.json')
 // const apiUrl = process.env.CONTACT_API_URL || config.beantown.urls.contactApi
-const apiUrl = 'https://contact-api.dev.jalgraves.com/v1/contact/beantown'
+// const apiUrl = 'https://contact-api.dev.jalgraves.com/v1/contact/hubpub'
+// const apiUrl = 'http://localhost:5012/v1/contact/hubpub'
 const contactReply = 'Request Received! We will respond to you as soon as we can. Thanks!'
 
 export const ContactForm = () => {
@@ -17,7 +18,8 @@ export const ContactForm = () => {
         'X-JAL-Comp': 'ContactForm'
     }
     const onSubmit = (values, e) => {
-        fetch(apiUrl, {method: 'POST', credentials: 'include', body: JSON.stringify(values), headers: heads})
+        console.log(values)
+        fetch('contact/send-message', {method: 'POST', credentials: 'include', body: JSON.stringify(values), headers: heads})
             .then(response => response.json())
             .then(data => setReply(data.msg))
             .catch(error => console.log(error))
@@ -68,6 +70,13 @@ export const ContactForm = () => {
                         ref={register({ required: 'Required'})}
                     ></textarea>
                     <h3>{errors.details && errors.details.message}</h3>
+                    <input
+                        name="catering"
+                        type="checkbox"
+                        value="Yes"
+                        ref={register()}
+                    />
+                    <label htmlFor="catering">Interested in having your event catered?</label><br />
                     <ViewButton borderColor='#e2e2e2' text='Submit' />
                 </form>
             </div>}

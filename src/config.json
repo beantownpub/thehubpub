@@ -69,8 +69,8 @@
                 "title": "Private Parties",
                 "keywords": "",
                 "description": "The Hub Pub private parties",
-                "menu_list": false,
-                "top_menu": false
+                "menu_list": true,
+                "top_menu": true
             },
             "facebook": {
                 "name": "https://www.facebook.com/thehubpub/",

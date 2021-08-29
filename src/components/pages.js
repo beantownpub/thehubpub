@@ -1,7 +1,7 @@
 import React from 'react'
 import { InfoSection } from './common'
 import { Map } from './map'
-// import { ContactForm } from './contactForm'
+import { ContactForm } from './contact/contactForm'
 // import { LinkButton } from './common'
 
 const config = require('./../config.json')
@@ -119,6 +119,23 @@ export const FAQ = () => {
                 </section>
             </InfoSection>
         </div>
+    )
+}
+
+export const PrivateParties = () => {
+    return (
+        <InfoSection bgColor='#fcba03'>
+            <section>
+                <h1>Private Parties</h1>
+                <article>
+                Make your next private event a memorable one. The Hub Pub's upstairs loft, with pool tables and ski-ball is available for
+                private events. Our private event menu offers a variety of freshly
+                prepared delicious appetizers all the way up to a full buffet with several entrees.
+                </article>
+
+                <ContactForm/>
+            </section>
+        </InfoSection>
     )
 }
 
