@@ -12,6 +12,11 @@ router.get('/', function(req, res, next) {
   res.render(home.template, home.metadata)
 })
 
+router.get('/healthz', function(req, res, next) {
+  console.log(`[GET] Health | ${req.path}`)
+  res.sendStatus('ok')
+})
+
 router.get('/index', function(req, res, next) {
   const home = sections.home
   res.render(home.template, home.metadata)

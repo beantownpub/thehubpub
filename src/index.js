@@ -1,12 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { MainInfo, AboutInfo, ContactInfo, PrivateParties } from './components/pages'
-import { HeroHeader, Footer } from './components/common'
-import { TopMenuBar, LinkList, TopNavBar, linkProps } from './components/TopBar'
-require('dotenv').config()
-const config = require('./config.json')
-const PAGES = config.thehubpub.pages
-const COLORS = config.thehubpub.colors
+import ReactRoutes from './components/reactRoutes'
+import { Footer } from './components/content/footer/main'
+import { TopMenuBar, LinkList, TopNavBar, linkProps } from './components/topBar/main'
+import { config } from './utils/main'
+const PAGES = config.pages
+const COLORS = config.colors
 
 function topMenu() {
     return (
@@ -50,42 +49,14 @@ ReactDOM.render(
     document.getElementById('topBar')
 )
 
+if (document.getElementById('app')) {
+    ReactDOM.render(
+        <ReactRoutes/>,
+        document.getElementById('app')
+    )
+}
+
 ReactDOM.render(
     <Footer/>,
     document.getElementById('footer')
 )
-
-if (document.getElementById('heroHeader')) {
-    ReactDOM.render(
-        <HeroHeader/>,
-        document.getElementById('heroHeader')
-    )
-}
-
-if (document.getElementById('aboutInfo')) {
-    ReactDOM.render(
-        <AboutInfo/>,
-        document.getElementById('aboutInfo')
-    )
-}
-
-if (document.getElementById('privateParties')) {
-    ReactDOM.render(
-        <PrivateParties/>,
-        document.getElementById('privateParties')
-    )
-}
-
-if (document.getElementById('contactInfo')) {
-    ReactDOM.render(
-        <ContactInfo/>,
-        document.getElementById('contactInfo')
-    )
-}
-
-if (document.getElementById('mainInfo')) {
-    ReactDOM.render(
-        <MainInfo/>,
-        document.getElementById('mainInfo')
-    )
-}

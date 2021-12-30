@@ -9,7 +9,7 @@
             }
         },
         "menu": {
-            "template": "menu",
+            "template": "index",
             "metadata": {
                 "title": "Hub Pub's Menu",
                 "description": "The Hub Pub Menu",
@@ -17,7 +17,7 @@
             }
         },
         "about": {
-            "template": "about",
+            "template": "index",
             "metadata": {
                 "title": "About The Hub Pub",
                 "description": "",
@@ -25,7 +25,7 @@
             }
         },
         "contact": {
-            "template": "contact",
+            "template": "index",
             "metadata": {
                 "title": "Contact The Hub Pub",
                 "description": "",
@@ -33,17 +33,9 @@
             }
         },
         "parties": {
-            "template": "parties",
+            "template": "index",
             "metadata": {
                 "title": "Private Parties",
-                "description": "",
-                "keywords": ""
-            }
-        },
-        "faq": {
-            "template": "faq",
-            "metadata": {
-                "title": "Hub Pub FAQ",
                 "description": "",
                 "keywords": ""
             }
