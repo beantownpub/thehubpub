@@ -39,81 +39,73 @@
             "name": "/",
             "icon": "faHome",
             "text": "Home",
-            "title": "The Hub Pub",
-            "keywords": "",
-            "description": "",
             "menu_list": true,
-            "top_menu": false
+            "top_menu": false,
+            "metadata": {
+                "title": "The Hub Pub",
+                "description": "The friendliest pub in the hub!",
+                "keywords": "bar, cocktails, beer, wine, freedom trail, boston, masssachusetts, pub, pool"
+            }
         },
         "about": {
             "name": "about",
             "icon": "faInfo",
             "text": "About",
-            "title": "About ALG",
-            "keywords": "",
-            "description": "Information about The Hub Pub",
             "menu_list": true,
-            "top_menu": true
+            "top_menu": true,
+            "metadata": {
+                "title": "About The Hub Pub",
+                "description": "Information about The Hub Pub",
+                "keywords": ""
+            }
         },
         "contact": {
             "name": "contact",
             "icon": "faEnvelope",
             "text": "Contact",
-            "title": "Contact The Hub Pub",
-            "keywords": "",
-            "description": "Contact information for The Hub Pub",
             "menu_list": true,
-            "top_menu": true
+            "top_menu": true,
+            "metadata": {
+                "title": "Contact The Hub Pub",
+                "description": "The Hub Pub's contact information",
+                "keywords": ""
+            }
         },
         "menu": {
             "name": "menu",
             "icon": "faUtensils",
             "text": "Menu",
-            "title": "The Hub Pub's Menu",
-            "keywords": "",
-            "description": "The Hub Pub food menu",
             "menu_list": true,
-            "top_menu": true
+            "top_menu": true,
+            "metadata": {
+                "title": "Hub Pub dining menu",
+                "description": "Hub Pub's food menu. Appetizers, soups, salads, entrees, sandwiches and burgers",
+                "keywords": "appetizers, apps, soups, salads, entrees, sandwiches, burgers"
+            }
         },
         "parties": {
             "name": "parties",
             "icon": "faUsers",
             "text": "Parties",
-            "title": "Private Parties",
-            "keywords": "",
-            "description": "The Hub Pub private parties",
             "menu_list": true,
-            "top_menu": true
+            "top_menu": true,
+            "metadata": {
+                "title": "Private Parties",
+                "description": "Hub Pub private events",
+                "keywords": ""
+            }
         },
         "facebook": {
             "name": "https://www.facebook.com/thehubpub/",
             "icon": "faFacebook",
             "text": "Facebook",
-            "title": "",
-            "keywords": "",
-            "description": "",
             "menu_list": true,
-            "top_menu": false
-        },
-        "instagram": {
-            "name": "https://www.instagram.com/thehubpub/",
-            "icon": "faInstagram",
-            "text": "Instagram",
-            "title": "",
-            "keywords": "",
-            "description": "",
-            "menu_list": false,
-            "top_menu": false
-        },
-        "twitter": {
-            "name": "https://twitter.com/thehubpub",
-            "icon": "faTwitter",
-            "text": "Twitter",
-            "title": "",
-            "keywords": "",
-            "description": "",
-            "menu_list": false,
-            "top_menu": false
+            "top_menu": false,
+            "metadata": {
+                "title": "About The Hub Pub",
+                "description": "",
+                "keywords": ""
+            }
         }
     }
 }

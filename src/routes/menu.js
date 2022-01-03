@@ -9,16 +9,16 @@ function makeRequest(uri, res) {
     const apiUrl = `${protocol}://${host}${uri}`
     getRequest(apiUrl, res)
   } catch(error) {
-    console.log('Request Error: ' + error)
+    console.log('makeRequest Failure: ' + error)
     res.status(500).json({
-      'title': 'Request Failure',
+      'title': 'makeRequest Failure',
       'status': 500
     })
   }
 }
 
 router.get('/categories', function (req, res, next) {
-  const uri = `/v3/menu?location=thehubpub`
+  const uri = `/v1/menu?location=thehubpub`
   console.log(`CATEGORIES | GET | ${uri}`)
   makeRequest(uri, res)
 })

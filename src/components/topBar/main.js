@@ -1,25 +1,25 @@
 import React from 'react'
 import {
-    StyledCloseMenu,
-    StyledHamburger,
     StyledSlideMenu,
-    StyledTopNav,
     StyledNavBar,
     StyledLink } from './styles'
-import MenuIcon, { getIcon } from '../content/icons/main'
+import { Icon } from '../content/icons/main'
+import { config } from '../../utils/main'
+import {toggleMenu, SlideMenuLogo } from './slide'
+import { NavBarLogo, navBar } from './navBar'
 
-const slide = require('../../utils/menuSlide')
+const COLORS = config.colors
 
 export function linkProps(pages, menuType) {
-    const props = []
+    const pageProps = []
     let id = 0
     for (const page of Object.keys(pages)) {
             if (pages[page][menuType] === true) {
-                props.push({id: id, name: pages[page].name, icon: pages[page].icon, text: pages[page].text})
+                pageProps.push({id: id, name: pages[page].name, iconName: pages[page].icon, text: pages[page].text})
             }
         ++id
     }
-    return props
+    return pageProps
 }
 
 const iconStyle = {
@@ -28,68 +28,35 @@ const iconStyle = {
 }
 
 export function LinkList(props) {
-    const slider = props.props.map((prop) =>
-        <StyledLink key={prop.id}>
-        <a href={prop.name} className="animate">
-            <MenuIcon
-                name={getIcon(prop.icon)}
-                style={iconStyle} /> {prop.text}</a>
+    for (const i of props.pages) {
+        console.log(`LinkList Icon: ${i['iconName']}`)
+    }
+    const slider = props.pages.map((page) =>
+        <StyledLink key={page.id}>
+        <a href={page.name} className="animate">
+        <Icon iconName={page.iconName} style={iconStyle} /> {page.text}</a>
         </StyledLink>
-    );
+    )
     return (
         <div>{slider}</div>
-    );
-}
-
-export function TopNavBar(props) {
-    const navBar = props.props.map((prop) =>
-        <a key={prop.id} href={prop.name}>{prop.text}</a>
-    )
-    return (
-        <StyledTopNav hoverColor={props.hoverColor} fontColor={props.fontColor}>
-            <nav className="top_nav">{navBar}</nav>
-        </StyledTopNav>
     )
 }
 
-function closeButton() {
-    return (
-        <StyledCloseMenu>
-            <button className="menu_close" id="close_menu" onClick={() => slide.menuClose()}>Close Menu</button>
-        </StyledCloseMenu>
+export const MainMenuBar = (props) => {
+    const menuList = <LinkList pages={linkProps(props.pages, 'menu_list')} />
+    return(
+        <StyledNavBar barColor={props.barColor} aria-labelledby="Navigation bar">
+            <StyledSlideMenu menuColor={props.menuColor} aria-labelledby="Slide menu">
+                <div className="slide_menu">
+                <SlideMenuLogo />
+                    <div className="menu_list">{menuList}</div>
+                    {toggleMenu("close")}
+                    <h2>Est. 1999</h2>
+                </div>
+            </StyledSlideMenu>
+            {toggleMenu("open")}
+            <NavBarLogo />
+            {navBar(props.pages)}
+        </StyledNavBar>
     )
-}
-
-function openButton() {
-    return (
-        <StyledHamburger>
-            <button className="hamburger" id="open_menu" onClick={() => slide.menuOpen()}>Open Menu</button>
-        </StyledHamburger>
-    )
-}
-
-export class TopMenuBar extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-    render() {
-        return(
-            <StyledNavBar barColor={this.props.barColor}>
-                <StyledSlideMenu menuColor={this.props.menuColor}>
-                    <div className="slide_menu">
-                    {this.props.topMenu}
-                        <div className="menu_list">
-                            {this.props.menuList}
-                        </div>
-                        {closeButton()}
-                        <h2>Est. 1999</h2>
-                    </div>
-                </StyledSlideMenu>
-                {openButton()}
-                {this.props.navBarLogo}
-                {this.props.bottomMenu}
-                {this.props.navBar}
-            </StyledNavBar>
-        )
-    }
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import MenuIcon, { getIcon } from '../content/icons/main'
+import { Icon } from '../content/icons/main'
 import { ViewButton } from './buttons'
 import { StyledContactForm } from './styles'
 
@@ -29,9 +29,9 @@ export const ContactForm = () => {
             {reply != contactReply &&
                 <div>
                 <h2>
-                    <MenuIcon
+                    <Icon
                         style={{fontSize: '.85rem', margin: 'auto'}}
-                        name={getIcon('faEnvelope')}
+                        iconName={'faEnvelope'}
                     /> Request Info
                 </h2>
                 <form onSubmit={handleSubmit(onSubmit)}>

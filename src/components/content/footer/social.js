@@ -1,5 +1,5 @@
 import React from 'react'
-import { SocialIcon } from '../icons/main'
+import { Icon } from '../icons/main'
 import { config } from '../../../utils/main'
 const urls = config.urls
 
@@ -12,7 +12,7 @@ const iconStyle = {
 export const SocialNav = () => {
     return (
         <nav style={{margin: '1rem auto'}}>
-            <a href={urls["facebook"]}><SocialIcon iconName="faFacebook" style={iconStyle} /></a>
+            <a href={urls["facebook"]}><Icon iconName="faFacebook" style={iconStyle} /></a>
         </nav>
     )
 }

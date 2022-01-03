@@ -5,7 +5,7 @@
  */
 
 var app = require('../src/app');
-var debug = require('debug')('node-jal:server');
+var debug = require('debug')('thehubpub:server');
 var http = require('http');
 
 /**
