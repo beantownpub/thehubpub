@@ -22,7 +22,7 @@ RUN npx webpack --config webpack.config.js && \
 
 FROM node:14.17.6-buster-slim
 
-ENV TINI_VERSION v0.18.0
+ENV TINI_VERSION v0.19.0
 
 COPY ./package* /app/
 WORKDIR /app

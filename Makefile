@@ -19,7 +19,6 @@ sass:
 build: sass
 	docker build \
 		-t $(image_name):$(image_tag) \
-		--build-arg square_app_id=${SQUARE_APP_ID} \
 		--build-arg node_env=$(environment) .
 
 publish: build

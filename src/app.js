@@ -7,7 +7,6 @@ var logger = require('morgan');
 var sassMiddleware = require('node-sass-middleware');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 var contactRouter = require('./routes/contact');
 var menuRouter = require('./routes/menu');
 
@@ -21,9 +20,10 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+
 // end new shit
 
-app.use(logger('dev'));
+app.use(logger('tiny'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -39,8 +39,7 @@ app.use(express.static(path.join(__dirname, '../dist/public')));
 
 const urlRoot = process.env.NODE_JAL_URL_ROOT || '/'
 
-app.use(urlRoot, indexRouter);
-app.use(urlRoot + '/users', usersRouter);
+app.use(urlRoot, indexRouter)
 app.use(urlRoot + 'contact', contactRouter)
 app.use(urlRoot + 'menu', menuRouter)
 
