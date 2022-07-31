@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/healthz', function(req, res, next) {
   console.log(`[GET] Health | ${req.path}`)
-  res.sendStatus('ok')
+  res.sendStatus(200)
 })
 
 router.get('/index', function(req, res, next) {
