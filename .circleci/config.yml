@@ -98,7 +98,7 @@ jobs:
       - run:
           name: Add Helm repo
           command: |
-            helm repo add thehubpub $HELM_REPO
+            helm repo add beantown $HELM_REPO
             kubectl config get-contexts
             kubectl get pods -n prod
       - run:
