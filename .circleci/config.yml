@@ -42,7 +42,16 @@ commands:
       - run:
           name: Install dependencies
           command: |
-            apt-get update && apt-get install -y git jq
+            apt-get update && apt-get install -y git jq sass
+
+  install_sass:
+    description: Install sass
+    steps:
+      - run:
+          name: Install Sass
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y sass
   check_tags:
     description: Check if git tag matches package.json version
     steps:
@@ -71,10 +80,13 @@ jobs:
     executor: build_machine
     steps:
       - checkout
+      - install_sass
       - run:
           name: Build Image
           command: |
             export VERSION=$(jq -r .version package.json | tr -d '"')
+            mkdir -p dist/public/css
+            sass ${PWD}/src/sass/style.sass ${PWD}/dist/public/css/style.css
             docker build \
               -t thehubpub:$VERSION \
               --build-arg node_env=production .
