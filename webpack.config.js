@@ -15,7 +15,9 @@ module.exports = env => {
       path: path.resolve(__dirname, 'dist/public/js'),
     },
     node: {
-      fs: 'empty'
+      global: true,
+      __filename: true,
+      __dirname: true
     },
     module: {
       rules: [

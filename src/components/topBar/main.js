@@ -28,9 +28,6 @@ const iconStyle = {
 }
 
 export function LinkList(props) {
-    for (const i of props.pages) {
-        console.log(`LinkList Icon: ${i['iconName']}`)
-    }
     const slider = props.pages.map((page) =>
         <StyledLink key={page.id}>
         <a href={page.name} className="animate">

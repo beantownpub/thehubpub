@@ -11,7 +11,6 @@ import { Home } from './content/main'
 import { PrivateParties } from './content/parties/main'
 
 export default function ReactRoutes() {
-    console.log('Rendering reactRoutes')
     return (
         <BrowserRouter>
             <Routes>
