@@ -50,7 +50,7 @@ commands:
       - run:
           name: Install Sass
           command: |
-            apt-get update && apt-get install -y sass
+            sudo apt-get update && apt-get install -y sass
   check_tags:
     description: Check if git tag matches package.json version
     steps:
