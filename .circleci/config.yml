@@ -106,7 +106,7 @@ jobs:
           command: |
             export VERSION=$(jq -r .version package.json | tr -d '"')
             helm repo update
-            helm upgrade --install thehubpub beantown/thehubpub \
+            helm upgrade --install thehubpub beantown/hubpub \
               --namespace prod \
               --set global.env=prod \
               --set image.tag=$VERSION \
