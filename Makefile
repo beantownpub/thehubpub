@@ -19,6 +19,7 @@ sass:
 build: sass
 	docker build \
 		-t $(image_name):$(image_tag) \
+		--build-arg google_api_key=${GOOGLE_API_KEY} \
 		--build-arg node_env=$(environment) .
 
 publish: build

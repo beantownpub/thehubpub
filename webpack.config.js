@@ -1,9 +1,14 @@
 const path = require('path')
-// const webpack = require('webpack')
+const webpack = require('webpack')
 
 module.exports = env => {
   return {
-    plugins: [],
+    plugins: [
+      new webpack.DefinePlugin({
+        "process.env.GOOGLE_API_KEY": JSON.stringify(process.env.GOOGLE_API_KEY),
+        "process.env.ENV": JSON.stringify(process.env.NODE_ENV)
+      })
+    ],
     mode: process.env.NODE_ENV,
     entry: './src/index.js',
     output: {
