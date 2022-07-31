@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyledContentContainer } from '../styles'
-import { Map } from './map'
+// import { Map } from './map'
 import { ContentContainer } from '../main'
 // import { config } from '../../../utils/main'
 // const COLORS = config.colors
@@ -21,19 +21,9 @@ const info = () => {
 }
 
 export const ContactInfo = () => {
-    const apiKey = process.env.GOOGLE_API_KEY
     return (
         <StyledContentContainer margin="5rem auto auto auto">
             {info()}
-            <ContentContainer>
-                <Map
-                    isMarkerShown
-                    googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${apiKey}&v=3.exp&libraries=geometry,drawing,places`}
-                    loadingElement={<div style={{ height: `100%` }} />}
-                    containerElement={<div style={{ height: `225px`, maxWidth: `80%` }} />}
-                    mapElement={<div style={{ height: `100%` }} />}
-                />
-            </ContentContainer>
         </StyledContentContainer>
     )
 }

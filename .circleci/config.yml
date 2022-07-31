@@ -77,7 +77,6 @@ jobs:
             export VERSION=$(jq -r .version package.json | tr -d '"')
             docker build \
               -t thehubpub:$VERSION \
-              --build-arg google_api_key=$GOOGLE_API_KEY \
               --build-arg node_env=production .
       - check_tags
       - run:
@@ -115,7 +114,7 @@ jobs:
 
 workflows:
   version: 2
-  thehubpub_frontend:
+  thehubpub:
     jobs:
       - lint
       - build_and_publish
