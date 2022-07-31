@@ -42,7 +42,7 @@ commands:
       - run:
           name: Install dependencies
           command: |
-            apt-get update && apt-get install -y git jq
+            apt-get update && apt-get install -y git jq sass
   check_tags:
     description: Check if git tag matches package.json version
     steps:
@@ -75,6 +75,8 @@ jobs:
           name: Build Image
           command: |
             export VERSION=$(jq -r .version package.json | tr -d '"')
+            mkdir -p dist/public/css
+            sass ${PWD}/src/sass/style.sass ${PWD}/dist/public/css/style.css
             docker build \
               -t thehubpub:$VERSION \
               --build-arg node_env=production .
