@@ -24,13 +24,13 @@ const RESPONSES = {
 
 function makeRequest(url, res) {
     OPTIONS.url = url
+    console.log('Requested URL - ' + OPTIONS.url)
     try {
         axios(OPTIONS)
         .then(response => {
             if (response.status === 200) {
                 console.log('URL - ' + OPTIONS.url)
                 console.log('Axios Response Status - ' + response.status)
-                console.log('Axios Data - ' + response.data.json)
                 res.status(200).json({'status': 200, 'data': response.data})
             } else {
                 res.status(500).json(RESPONSES.apiError)
@@ -38,7 +38,7 @@ function makeRequest(url, res) {
             res.end()
         })
         .catch(error => {
-            console.error('Axios Response Status - ' + error.response.status)
+            console.error('Axios Response Status - ' + error)
             if (error.response.status === 404) {
                 res.status(200).json({'status': 200, 'data': []})
             } else {

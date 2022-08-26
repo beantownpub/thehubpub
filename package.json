@@ -1,12 +1,12 @@
 {
   "name": "thehubpub",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "private": true,
   "engines": {
     "node": ">=14.17.6 <15"
   },
   "scripts": {
-    "start": "node -r ./bin/server",
+    "start": "node --trace-warnings -r ./bin/server",
     "build": "npx webpack --config webpack.config.js"
   },
   "dependencies": {

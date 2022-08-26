@@ -18,6 +18,7 @@ sass:
 
 build: sass
 	docker build \
+		--platform linux/x86_64 \
 		-t $(image_name):$(image_tag) \
 		--build-arg node_env=$(environment) .
 
