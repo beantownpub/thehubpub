@@ -28,6 +28,7 @@ export const StyledFooter = styled.div`
         text-shadow: 2px 2px 4px ${COLORS.black};
     }
     h3 {
+        line-height: 2rem;
         margin: auto;
         padding: .5rem 0;
         font-size: 1.65em;
@@ -36,11 +37,7 @@ export const StyledFooter = styled.div`
     h4 {
         margin: auto;
         padding: 1rem 0;
-        font-family: 'Raleway', Arial, sans-serif;
-        font-size: 2rem;
-        color: ${props => props.fontColor || "#1f6696"};
-        text-transform: capitalize;
-        letter-spacing: none;
-        text-shadow: 2px 2px 4px ${COLORS.black};
+        font-size: 1rem;
+        color: ${props => props.backgroundColor || "white"};
     }
 `

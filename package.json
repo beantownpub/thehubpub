@@ -1,9 +1,9 @@
 {
   "name": "thehubpub",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "private": true,
   "engines": {
-    "node": ">=14.17.6 <15"
+    "node": ">=14.17.6 <18"
   },
   "scripts": {
     "start": "node --trace-warnings -r ./bin/server",

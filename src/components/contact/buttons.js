@@ -1,5 +1,5 @@
 import React from 'react'
-import WtfIcon from '../content/icons/main'
+import Icon from '../content/icons/main'
 import { StyledButton, iconStyle } from './styles'
 
 export class ViewButton extends React.Component {
@@ -23,7 +23,7 @@ export class ViewButton extends React.Component {
             <StyledButton borderColor={this.props.borderColor} width={this.props.width} aria-labelledby="Button">
                 <button onClick={this.handleClick}>
                     {this.props.icon &&
-                        <WtfIcon style={iconStyle} iconName={this.props.icon} />}{this.props.text}</button>
+                        <Icon style={iconStyle} iconName={this.props.icon} />}{this.props.text}</button>
             </StyledButton>
 		)
     }

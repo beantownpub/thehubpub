@@ -5,7 +5,10 @@ module.exports = env => {
   return {
     plugins: [
       new webpack.DefinePlugin({
-        "process.env.ENV": JSON.stringify(process.env.NODE_ENV)
+        "process.env.ENV": JSON.stringify(process.env.NODE_ENV),
+        "process.env.GIT_HASH": JSON.stringify(process.env.GIT_HASH),
+        "process.env.VERSION": JSON.stringify(process.env.VERSION)
+        
       })
     ],
     mode: process.env.NODE_ENV,

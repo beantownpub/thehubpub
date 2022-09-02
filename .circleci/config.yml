@@ -89,7 +89,9 @@ jobs:
             sass ${PWD}/src/sass/style.sass ${PWD}/dist/public/css/style.css
             docker build \
               -t thehubpub:$VERSION \
-              --build-arg node_env=production .
+              --build-arg node_env=production \
+              --build-arg git_hash=$CIRCLE_SHA1 \
+              --build-arg version=$VERSION .
       - check_tags
       - run:
           name: Publish Image
