@@ -16,7 +16,7 @@
     "express": ">=4.17.1",
     "http-errors": ">=1.7.1",
     "morgan": "~1.9.1",
-    "react-slick": "^0.25.2",
+    "react-slick": "^0.29.0",
     "react-slideshow-image": "^1.4.2"
   },
   "devDependencies": {
