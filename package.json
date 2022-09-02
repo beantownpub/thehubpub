@@ -1,9 +1,9 @@
 {
   "name": "thehubpub",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "private": true,
   "engines": {
-    "node": ">=14.17.6 <15"
+    "node": ">=14.17.6 <18"
   },
   "scripts": {
     "start": "node --trace-warnings -r ./bin/server",
@@ -36,7 +36,7 @@
     "eslint": "^6.8.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-hook-form": "^5.1.1",
+    "react-hook-form": "^7.34.2",
     "react-loader-spinner": "^3.1.5",
     "react-router": "^6.2.1",
     "react-router-dom": "^6.2.1",
