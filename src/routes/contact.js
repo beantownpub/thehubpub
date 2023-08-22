@@ -21,8 +21,8 @@ const HEADERS = {'Content-Type': 'application/json', 'Authorization': AUTH}
 router.post('/send-message', function (req, res, next) {
   console.log(req.body)
   try {
-    const host = process.env.CONTACT_API_HOST
-    const protocol = process.env.CONTACT_API_PROTOCOL || 'https'
+    const host = process.env.CONTACT_API_HOST || 'contact-api'
+    const protocol = process.env.CONTACT_API_PROTOCOL || 'http'
     const api_url = `${protocol}://${host}/v1/contact/hubpub`
 
     axios({

@@ -1,18 +1,11 @@
 version: 2.1
 executors:
-  build_machine:
-    machine:
-      image: ubuntu-2004:202201-02
-    environment:
-      DOCKER_BUILDKIT: 1
-      BUILDX_PLATFORMS: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7,linux/arm/v6
-    resource_class: large
   debian:
     docker:
-    - image: python:3.7-slim-buster
+    - image: cimg/python:3.7
   node:
     docker:
-      - image: cimg/node:14.17.6
+      - image: cimg/node:18.16.0
 
 commands:
   install_k8s_dependencies:
@@ -21,9 +14,9 @@ commands:
       - run:
           name: Install kubectl
           command: |
-            apt-get update -y && apt-get install -y curl
-            curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-            install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+            sudo apt-get update -y && sudo apt-get install -y curl
+            sudo curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+            sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
             kubectl config set-credentials jalbot --token=$JALBOT_TOKEN
             kubectl config set-cluster prod --server=$K8S_SERVER --insecure-skip-tls-verify=true
             kubectl config set-context jalbot --cluster=prod --user=jalbot
@@ -31,27 +24,18 @@ commands:
       - run:
           name: Install helm
           command: |
-            apt-get install apt-transport-https gnupg2 --yes
-            curl https://baltocdn.com/helm/signing.asc | apt-key add -
-            echo "deb https://baltocdn.com/helm/stable/debian/ all main" | tee /etc/apt/sources.list.d/helm-stable-debian.list
-            apt-get update
-            apt-get install -y helm
-  install_version_dependencies:
+            sudo apt-get install apt-transport-https gnupg2  --yes
+            sudo curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -
+            sudo echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+            sudo apt-get update
+            sudo apt-get install -y helm
+  install_build_dependencies:
     description: Install dependencies for versioning
     steps:
       - run:
           name: Install dependencies
           command: |
-            apt-get update && apt-get install -y git jq sass
-
-  install_sass:
-    description: Install sass
-    steps:
-      - run:
-          name: Install Sass
-          command: |
-            sudo apt-get update
-            sudo apt-get install -y sass
+            sudo apt-get update && sudo apt-get install -y git jq sass
   check_tags:
     description: Check if git tag matches package.json version
     steps:
@@ -77,10 +61,14 @@ jobs:
             npx eslint .
 
   build_and_publish:
-    executor: build_machine
+    executor: debian
+    resource_class: large
     steps:
       - checkout
-      - install_sass
+      - setup_remote_docker:
+          version: 20.10.14
+          docker_layer_caching: true
+      - install_build_dependencies
       - run:
           name: Build Image
           command: |
@@ -106,7 +94,7 @@ jobs:
     executor: debian
     steps:
       - checkout
-      - install_version_dependencies
+      - install_build_dependencies
       - check_tags
       - install_k8s_dependencies
       - run:
@@ -127,7 +115,6 @@ jobs:
               --set logLevel=tiny
 
 workflows:
-  version: 2
   thehubpub:
     jobs:
       - lint

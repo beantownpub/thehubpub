@@ -1,4 +1,4 @@
-FROM node:16.13.0-buster-slim AS build
+FROM node:18.16.0-buster-slim AS build
 
 RUN apt-get update  && \
     apt-get install -y \
@@ -9,9 +9,11 @@ RUN apt-get update  && \
         gcc
 
 FROM build AS install
+ARG aws_region
 ARG git_hash
 ARG node_env
 ARG version
+ENV AWS_DEFAULT_REGION=${aws_region}
 ENV GIT_HASH=${git_hash}
 ENV NODE_ENV=${node_env}
 ENV VERSION=${version}
@@ -24,10 +26,11 @@ COPY . ./
 RUN npx webpack --config webpack.config.js && \
     rm -rf node_modules
 
-FROM node:16.13.0-buster-slim
+FROM node:18.16.0-buster-slim
 
 ENV TINI_VERSION v0.19.0
 
+RUN apt-get update && apt-get install -y curl
 COPY ./package* /app/
 WORKDIR /app
 RUN npm ci --production || npm ci --production
