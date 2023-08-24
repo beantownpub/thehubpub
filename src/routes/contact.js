@@ -5,9 +5,6 @@ var sections = config.default.sections
 import * as axios from 'axios'
 import HEADERS from '../utils/auth.js'
 
-console.log(Object.keys(axios))
-
-
 router.get('/items', function(req, res, next) {
   const merch = sections['merch']
   res.set('Cookie', req.cookies.cart)
@@ -39,7 +36,7 @@ router.post('/send-message', function (req, res, next) {
             'status': 500,
             'message': 'Contact API Error'
           })
-        }
+        } 
         res.end()
       })
       .catch(error => {

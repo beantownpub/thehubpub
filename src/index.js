@@ -8,22 +8,22 @@ const PAGES = config.pages
 const COLORS = config.colors
 
 ReactDOM.render(
-    <MainMenuBar
-        pages={PAGES}
-        fontColor={COLORS.white}
-        barColor={COLORS.black}
-        menuColor={COLORS.gray} />,
-    document.getElementById('topBar')
+  <MainMenuBar
+    pages={PAGES}
+    fontColor={COLORS.white}
+    barColor={COLORS.black}
+    menuColor={COLORS.gray} />,
+  document.getElementById('topBar')
 )
 
 if (document.getElementById('app')) {
-    ReactDOM.render(
-        <ReactRoutes/>,
-        document.getElementById('app')
-    )
+  ReactDOM.render(
+    <ReactRoutes/>,
+    document.getElementById('app')
+  )
 }
 
 ReactDOM.render(
-    <Footer/>,
-    document.getElementById('footer')
+  <Footer/>,
+  document.getElementById('footer')
 )
