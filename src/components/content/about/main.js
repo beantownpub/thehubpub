@@ -1,7 +1,7 @@
 import React from 'react'
-import { StyledContentContainer, StyledContent } from '../styles'
-import { ContentContainer } from '../main'
-import { config } from '../../../utils/main'
+import { StyledContentContainer, StyledContent } from '../styles.js'
+import { ContentContainer } from '../main.js'
+import { config } from '../../../utils/main.js'
 
 const COLORS = config.colors
 

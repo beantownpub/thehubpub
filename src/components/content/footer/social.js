@@ -1,6 +1,6 @@
 import React from 'react'
-import { Icon } from '../icons/main'
-import { config } from '../../../utils/main'
+import { Icon } from '../icons/main.js'
+import { config } from '../../../utils/main.js'
 const urls = config.urls
 
 const iconStyle = {

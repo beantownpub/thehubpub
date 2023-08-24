@@ -3,6 +3,6 @@ name: hubpub
 description: The Hub Pub site deployment
 type: application
 version: 0.1.10
-appVersion: 0.1.10
+appVersion: 0.1.11
 sources:
 - https://github.com/beantownpub/thehubpub

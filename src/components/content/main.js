@@ -1,7 +1,7 @@
 import React from 'react'
-import { config } from '../../utils/main'
-import { StyledContentContainer, StyledContent } from './styles'
-import { HeroHeader } from './heroHeader/main'
+import { config } from '../../utils/main.js'
+import { StyledContentContainer, StyledContent } from './styles.js'
+import { HeroHeader } from './heroHeader/main.js'
 const COLORS = config.colors
 
 export const ContentContainer = (props) => {

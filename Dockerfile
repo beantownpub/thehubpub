@@ -9,11 +9,9 @@ RUN apt-get update  && \
         gcc
 
 FROM build AS install
-ARG aws_region
 ARG git_hash
 ARG node_env
 ARG version
-ENV AWS_DEFAULT_REGION=${aws_region}
 ENV GIT_HASH=${git_hash}
 ENV NODE_ENV=${node_env}
 ENV VERSION=${version}
@@ -23,11 +21,12 @@ WORKDIR /app
 RUN npm ci --save-dev --production=false
 COPY . ./
 
-RUN npx webpack --config webpack.config.js && \
+RUN npx webpack --config webpack.config.cjs && \
     rm -rf node_modules
 
 FROM node:18.16.0-buster-slim
-
+ARG aws_region
+ENV AWS_DEFAULT_REGION=${aws_region}
 ENV TINI_VERSION v0.19.0
 
 RUN apt-get update && apt-get install -y curl

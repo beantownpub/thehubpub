@@ -1,22 +1,18 @@
-var express = require('express')
-var router = express.Router()
-var config = require('./config.json')
-var sections = config.sections
-const axios = require('axios')
+import express from 'express'
+const router = express.Router()
+import * as config from '../utils/config.js'
+var sections = config.default.sections
+import * as axios from 'axios'
+import HEADERS from '../utils/auth.js'
 
-var jalVersion = (process.env.JAL_VERSION) ? process.env.JAL_VERSION : 'unset'
+console.log(Object.keys(axios))
+
 
 router.get('/items', function(req, res, next) {
   const merch = sections['merch']
-  res.set('x-jalv', jalVersion)
   res.set('Cookie', req.cookies.cart)
   res.cookie('cart', req.cookies.cart).render(merch.template, merch.metadata);
 })
-
-const API_USER = process.env.API_USERNAME
-const API_PW = process.env.API_PASSWORD
-const AUTH = 'Basic ' + Buffer.from(API_USER + ':' + API_PW).toString('base64')
-const HEADERS = {'Content-Type': 'application/json', 'Authorization': AUTH}
 
 router.post('/send-message', function (req, res, next) {
   console.log(req.body)
@@ -25,7 +21,7 @@ router.post('/send-message', function (req, res, next) {
     const protocol = process.env.CONTACT_API_PROTOCOL || 'http'
     const api_url = `${protocol}://${host}/v1/contact/hubpub`
 
-    axios({
+    axios.default({
       method: 'post',
       url: api_url,
       data: req.body,
@@ -78,4 +74,4 @@ router.get('/contact', function(req, res, next) {
   res.redirect('/contact')
 })
 
-module.exports = router
+export default router

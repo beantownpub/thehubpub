@@ -4,11 +4,11 @@ import {
     Routes,
     Route
 } from "react-router-dom"
-import { AboutInfo } from './content/about/main'
-import { ContactInfo } from './content/contact/main'
-import { FoodMenu } from './foodMenus/main'
-import { Home } from './content/main'
-import { PrivateParties } from './content/parties/main'
+import { AboutInfo } from './content/about/main.js'
+import { ContactInfo } from './content/contact/main.js'
+import { FoodMenu } from './foodMenus/main.js'
+import { Home } from './content/main.js'
+import { PrivateParties } from './content/parties/main.js'
 
 export default function ReactRoutes() {
     return (

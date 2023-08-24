@@ -1,7 +1,7 @@
 import React from 'react'
-import { StyledContentContainer } from '../styles'
-import { ContentContainer } from '../main'
-import { ContactForm } from '../../contact/main'
+import { StyledContentContainer } from '../styles.js'
+import { ContentContainer } from '../main.js'
+import { ContactForm } from '../../contact/main.js'
 
 export const PrivateParties = () => {
     return (

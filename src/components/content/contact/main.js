@@ -1,8 +1,8 @@
 import React from 'react'
-import { StyledContentContainer } from '../styles'
+import { StyledContentContainer } from '../styles.js'
 // import { Map } from './map'
-import { ContentContainer } from '../main'
-// import { config } from '../../../utils/main'
+import { ContentContainer } from '../main.js'
+// import { config } from '../../../utils/main.js'
 // const COLORS = config.colors
 
 const info = () => {

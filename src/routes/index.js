@@ -1,7 +1,9 @@
-var express = require('express')
-var router = express.Router()
-var config = require('../utils/config.json')
-var pages = config.pages
+import express from 'express'
+const router = express.Router()
+import * as config from '../utils/config.js'
+console.log(config)
+var pages = config.default.pages
+console.log(`WTF PAGES: ${pages}`)
 
 router.use(function (req, res, next) {
   next()
@@ -57,4 +59,4 @@ router.get('/parties.html', function (req, res, next) {
   res.render("main", parties.metadata)
 })
 
-module.exports = router
+export default router

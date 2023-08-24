@@ -1,6 +1,6 @@
 import React from 'react'
-import { StyledSideSection} from '../styles/main'
-import { StyledItem } from '../styles/items'
+import { StyledSideSection} from '../styles/main.js'
+import { StyledItem } from '../styles/items.js'
 
 export const Sides = (props) => {
     // console.log(`SIDES: ${props.sides}`)

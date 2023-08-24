@@ -25,6 +25,10 @@ spec:
     spec:
       containers:
       - env:
+        - name: AWS_ACCESS_KEY_ID
+          value: AKIARUG753VYX6G4BJWF
+        - name: AWS_SECRET_ACCESS_KEY
+          value: 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
         - name: CONTACT_API_HOST
           valueFrom:
             secretKeyRef:

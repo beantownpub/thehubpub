@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { config } from '../../../utils/main'
+import { config } from '../../../utils/main.js'
 const COLORS = config.colors
 const FONTS = config.fonts
 
@@ -12,7 +12,7 @@ export const StyledFooter = styled.div`
     background-color: ${props => props.backgroundColor || "white"};
     footer {
         margin: auto;
-        font-family: 'Raleway', Arial, sans-serif;
+        font-family: ${FONTS.content};
         text-transform: uppercase;
         color: ${props => props.fontColor || "#1f6696"};
         text-align: center;

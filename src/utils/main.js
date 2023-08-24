@@ -1,8 +1,9 @@
-const config = require('./config.json')
+import * as configObj from "./config.js"
 
 const getOptions = {
     method: 'GET',
     headers: {'Content-Type': 'application/json'}
 }
+const config = configObj.default
 
-module.exports = { config, getOptions }
+export { config, getOptions }

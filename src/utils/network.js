@@ -6,8 +6,8 @@ const MENU_API_PROTOCOL = process.env.MENU_API_PROTOCOL || 'http'
 const MENU_API_PORT = process.env.MENU_API_SERVICE_PORT || process.env.MENU_API_PORT
 
 function makeUrl(port, protocol, host) {
-    const url = port ? `${protocol}://${host}:${port}` : `${protocol}://${host}`
-    return url
+  const url = port ? `${protocol}://${host}:${port}` : `${protocol}://${host}`
+  return url
 }
 
 const urls = {
@@ -19,4 +19,4 @@ if (process.env.NODE_ENV === "development") {
   console.log(urls)
 }
 
-module.exports = { urls }
+export default urls

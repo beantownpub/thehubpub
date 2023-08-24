@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import ReactRoutes from './components/reactRoutes'
-import { Footer } from './components/content/footer/main'
-import { MainMenuBar } from './components/topBar/main'
-import { config } from './utils/main'
+import ReactRoutes from './components/reactRoutes.js'
+import { Footer } from './components/content/footer/main.js'
+import { MainMenuBar } from './components/topBar/main.js'
+import { config } from './utils/main.js'
 const PAGES = config.pages
 const COLORS = config.colors
 

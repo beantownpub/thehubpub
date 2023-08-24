@@ -1,9 +1,9 @@
-const axios = require('axios')
-const authHeaders = require('./auth')
+import * as axios from 'axios'
+import HEADERS from './auth.js'
 
 const OPTIONS = {
     method: 'get',
-    headers: authHeaders,
+    headers: HEADERS,
     url: ''
 }
 
@@ -23,33 +23,33 @@ const RESPONSES = {
 }
 
 function makeRequest(url, res) {
-    OPTIONS.url = url
-    console.log('Requested URL - ' + OPTIONS.url)
-    try {
-        axios(OPTIONS)
-        .then(response => {
-            if (response.status === 200) {
-                console.log('URL - ' + OPTIONS.url)
-                console.log('Axios Response Status - ' + response.status)
-                res.status(200).json({'status': 200, 'data': response.data})
-            } else {
-                res.status(500).json(RESPONSES.apiError)
-            }
-            res.end()
-        })
-        .catch(error => {
-            console.error('Axios Response Status - ' + error)
-            if (error.response.status === 404) {
-                res.status(200).json({'status': 200, 'data': []})
-            } else {
-                console.log('Axios Message - ' + error.message)
-                res.status(500).json(RESPONSES.apiError)
-            }
-        })
-    } catch(error) {
-        console.log('Uncaught Error - ' + error)
-        res.status(500).json(RESPONSES.uncaughtError)
-    }
+  OPTIONS.url = url
+  console.log('Requested URL - ' + OPTIONS.url)
+  try {
+      axios.default(OPTIONS)
+      .then(response => {
+        if (response.status === 200) {
+          console.log('URL - ' + OPTIONS.url)
+          console.log('Axios Response Status - ' + response.status)
+          res.status(200).json({'status': 200, 'data': response.data})
+        } else {
+            res.status(500).json(RESPONSES.apiError)
+        }
+        res.end()
+      })
+      .catch(error => {
+        console.error('Axios Response Status - ' + error)
+        if (error.response.status === 404) {
+            res.status(200).json({'status': 200, 'data': []})
+        } else {
+            console.log('Axios Message - ' + error.message)
+            res.status(500).json(RESPONSES.apiError)
+        }
+      })
+  } catch(error) {
+    console.log('Uncaught Error - ' + error)
+    res.status(500).json(RESPONSES.uncaughtError)
+  }
 }
 
-module.exports = makeRequest
+export default makeRequest

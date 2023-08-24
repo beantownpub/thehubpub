@@ -1,6 +1,6 @@
 import React from 'react'
-import { StyledMenuItem } from '../styles/menuItem'
-import { StyledMenuSection } from '../styles/menuSection'
+import { StyledMenuItem } from '../styles/menuItem.js'
+import { StyledMenuSection } from '../styles/menuSection.js'
 
 const MenuItem = (props) => {
     return (

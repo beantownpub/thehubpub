@@ -1,7 +1,7 @@
-var express = require('express')
-var router = express.Router()
-const getRequest = require('../utils/request')
-const network = require('../utils/network')
+import express from 'express'
+const router = express.Router()
+import getRequest from '../utils/request.js'
+import network from '../utils/network.js'
 
 function makeRequest(uri, res) {
   try {
@@ -29,4 +29,4 @@ router.get('/:page', function(req, res, next) {
   res.redirect(`/${req.params['page']}`)
 })
 
-module.exports = router
+export default router

@@ -38,7 +38,7 @@ template:
 		--debug
 
 ## Forward port to service
-port_forward:
+helm/port_forward:
 		kubectl port-forward --namespace $(namespace) svc/$(name) $(port):$(port)
 
 stop_pf:

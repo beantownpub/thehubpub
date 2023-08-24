@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { Icon } from '../content/icons/main'
-import { ViewButton } from './buttons'
-import { StyledContactForm } from './styles'
+import { Icon } from '../content/icons/main.js'
+import { ViewButton } from './buttons.js'
+import { StyledContactForm } from './styles.js'
 
 const contactReply = 'Request Received! We will respond to you as soon as we can. Thanks!'
 

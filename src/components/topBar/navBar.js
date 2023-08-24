@@ -1,12 +1,12 @@
 import React from 'react'
-import { linkProps } from './main'
-import { config } from '../../utils/main'
-import { StyledTopNav } from './styles'
+import { linkProps } from './main.js'
+import { config } from '../../utils/main.js'
+import { StyledTopNav } from './styles.js'
 
 const COLORS = config.colors
 
 export const NavBarLogo = () => {
-    var imgStyles = {position: 'absolute', padding: '.25em'}
+    const imgStyles = {position: 'absolute', padding: '.25em'}
     return (
         <a href="/">
             <img style={imgStyles} src={"/images/logos/thehubpub_second_logo.png"}  alt="Hub Pub logo" />
