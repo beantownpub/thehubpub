@@ -1,9 +1,8 @@
 import express from 'express'
 const router = express.Router()
 import * as config from '../utils/config.js'
-console.log(config)
-var pages = config.default.pages
-console.log(`WTF PAGES: ${pages}`)
+const pages = config.default.pages
+
 
 router.use(function (req, res, next) {
   next()

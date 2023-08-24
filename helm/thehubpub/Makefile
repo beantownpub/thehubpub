@@ -22,11 +22,15 @@ helm/context:
 	kubectl config use-context $(context)
 
 ## Install Helm chart
-helm/install: helm/context
+helm/install/dev: helm/context
 	cd helm/thehubpub && \
 		helm upgrade --install $(name) . \
 		--namespace $(namespace) \
-		--set global.env=$(env) \
+		--set aws.secretName=${AWS_SECRET_NAME} \
+		--set aws.accessKeyId=${AWS_ACCESS_KEY_ID} \
+		--set aws.secretAccessKey=${AWS_SECRET_ACCESS_KEY} \
+		--set aws.region=${AWS_DEFAULT_REGION} \
+		--set env=$(env) \
 		--debug
 
 ## Run Helm template

@@ -3,7 +3,8 @@ const router = express.Router()
 import * as config from '../utils/config.js'
 var sections = config.default.sections
 import * as axios from 'axios'
-import HEADERS from '../utils/auth.js'
+import secret from '../utils/secrets.js'
+
 
 router.get('/items', function(req, res, next) {
   const merch = sections['merch']
@@ -17,12 +18,13 @@ router.post('/send-message', function (req, res, next) {
     const host = process.env.CONTACT_API_HOST || 'contact-api'
     const protocol = process.env.CONTACT_API_PROTOCOL || 'http'
     const api_url = `${protocol}://${host}/v1/contact/hubpub`
+    const auth = 'Basic ' + Buffer.from(secret.api_user + ':' + secret.api_pass).toString('base64')
 
     axios.default({
       method: 'post',
       url: api_url,
       data: req.body,
-      headers: HEADERS
+      headers: {'Content-Type': 'application/json', 'Authorization': auth}
     })
       .then(response => {
         if (response.status === 200) {

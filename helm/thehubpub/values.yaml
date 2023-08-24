@@ -1,3 +1,10 @@
+aws:
+  accessKeyId:
+  region:
+  secretAccessKey:
+  secretName:
+
+env: dev
 image:
   name: thehubpub
   repository: jalgraves/thehubpub
@@ -5,14 +12,14 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
 
+istio:
+  enabled: false
+
 containerPort: 3037
 portName: tcp-thehubpub
 
-ingress:
-  enabled: false
-
-ingressHost: ""
 regionCode:
+replicaCount: 1
 resources:
   requests:
     cpu: 50m

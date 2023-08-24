@@ -10,5 +10,4 @@ spec:
   - name: http
     port: 80
     targetPort: {{ .Values.containerPort }}
-  selector:
-    app: {{ include "thehubpub.fullname" . }}
+  selector: {{ include "thehubpub.selectorLabels" . | nindent 6 }}
