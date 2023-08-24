@@ -1,6 +1,6 @@
 import express from 'express'
+import { config } from '../utils/main.js'
 const router = express.Router()
-import * as config from '../utils/config.js'
 const pages = config.default.pages
 
 

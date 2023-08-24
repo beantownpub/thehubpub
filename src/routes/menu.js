@@ -5,9 +5,6 @@ import network from '../utils/network.js'
 
 function makeRequest(uri, res) {
   try {
-    // const host = process.env.MENU_API_HOST
-    // const protocol = process.env.MENU_API_PROTOCOL || 'https'
-    // const apiUrl = `${protocol}://${host}${uri}`
     const apiUrl = `${network.urls.menuApi}${uri}`
     getRequest(apiUrl, res)
   } catch(error) {

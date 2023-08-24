@@ -1,6 +1,6 @@
 import express from 'express'
 const router = express.Router()
-import * as config from '../utils/config.js'
+import { config } from '../utils/main.js'
 var sections = config.default.sections
 import * as axios from 'axios'
 import secret from '../utils/secrets.js'
