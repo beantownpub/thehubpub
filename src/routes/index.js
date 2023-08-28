@@ -3,7 +3,6 @@ import { config } from '../utils/main.js'
 const router = express.Router()
 const pages = config.default.pages
 
-
 router.use(function (req, res, next) {
   next()
 })

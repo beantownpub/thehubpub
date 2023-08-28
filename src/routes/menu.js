@@ -1,7 +1,7 @@
 import express from 'express'
-const router = express.Router()
 import getRequest from '../utils/request.js'
 import network from '../utils/network.js'
+const router = express.Router()
 
 function makeRequest(uri, res) {
   try {

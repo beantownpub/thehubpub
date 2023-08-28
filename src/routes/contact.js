@@ -1,10 +1,9 @@
 import express from 'express'
-const router = express.Router()
 import { config } from '../utils/main.js'
-var sections = config.default.sections
 import * as axios from 'axios'
 import secret from '../utils/secrets.js'
-
+const sections = config.default.sections
+const router = express.Router()
 
 router.get('/items', function(req, res, next) {
   const merch = sections['merch']
@@ -38,7 +37,7 @@ router.post('/send-message', function (req, res, next) {
             'status': 500,
             'message': 'Contact API Error'
           })
-        } 
+        }
         res.end()
       })
       .catch(error => {
