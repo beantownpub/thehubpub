@@ -1,7 +1,7 @@
 import express from 'express'
 import { config } from '../utils/main.js'
 const router = express.Router()
-const pages = config.default.pages
+const pages = config.pages
 
 router.use(function (req, res, next) {
   next()

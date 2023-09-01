@@ -22,7 +22,7 @@ helm/context:
 	kubectl config use-context $(context)
 
 ## Install Helm chart
-helm/install/dev: helm/context
+helm/install: helm/context
 	cd helm/thehubpub && \
 		helm upgrade --install $(name) . \
 		--namespace $(namespace) \
@@ -32,6 +32,14 @@ helm/install/dev: helm/context
 		--set aws.region=${AWS_DEFAULT_REGION} \
 		--set env=$(env) \
 		--debug
+
+## Uninstall beantown frontend from K8s cluster
+helm/delete:
+	kubectl config use-context $(context) && \
+	helm uninstall $(name) -n $(namespace)
+
+## Delete Helm release and redeploy
+helm/redeploy: helm/delete helm/install
 
 ## Run Helm template
 template:

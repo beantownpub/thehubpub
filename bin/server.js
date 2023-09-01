@@ -19,26 +19,26 @@ const server = http.createServer(app.default)
  */
 
 server.listen(port, () => console.log(`listening on - http://localhost:${port}`))
-server.on('error', onError);
-server.on('listening', onListening);
+server.on('error', onError)
+server.on('listening', onListening)
 
 /**
  * Normalize a port into a number, string, or false.
  */
 
 function normalizePort(val) {
-  const port = parseInt(val, 10);
+  const port = parseInt(val, 10)
 
   if (isNaN(port)) {
     // named pipe
-    return val;
+    return val
   }
 
   if (port >= 0) {
-    return port;
+    return port
   }
 
-  return false;
+  return false
 }
 
 /**
@@ -57,15 +57,15 @@ function onError(error) {
   // handle specific listen errors with friendly messages
   switch (error.code) {
     case 'EACCES':
-      console.error(bind + ' requires elevated privileges');
+      console.error(bind + ' requires elevated privileges')
       process.exit(1);
       break;
     case 'EADDRINUSE':
-      console.error(bind + ' is already in use');
-      process.exit(1);
+      console.error(bind + ' is already in use')
+      process.exit(1)
       break;
     default:
-      throw error;
+      throw error
   }
 }
 
@@ -74,7 +74,7 @@ function onError(error) {
  */
 
 function onListening() {
-  const addr = server.address();
+  const addr = server.address()
   let bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port

@@ -59,3 +59,10 @@ help/generate:
 		} \
 	} \
 	{ lastLine = $$0 }' $(MAKE_FILES) | sort -u
+
+# Silence make output
+MAKEFLAGS += -s
+
+helm/infra/update/%:
+	echo $@
+	cd apps/helm-apps/infrastructure/$* && ls -l

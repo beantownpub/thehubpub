@@ -2,7 +2,7 @@ import express from 'express'
 import { config } from '../utils/main.js'
 import * as axios from 'axios'
 import secret from '../utils/secrets.js'
-const sections = config.default.sections
+const sections = config.sections
 const router = express.Router()
 
 router.get('/items', function(req, res, next) {
