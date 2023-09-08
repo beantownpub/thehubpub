@@ -63,6 +63,9 @@ spec:
           initialDelaySeconds: 15
           failureThreshold: 3
           periodSeconds: 10
+      {{- if .Values.serviceAccount.create }}
+      serviceAccountName: {{ include "thehubpub.serviceAccountName" . }}
+      {{- end }}
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
