@@ -8,8 +8,7 @@ async function asyncCall() {
   const data = await client.send(command)
   return JSON.parse(data.SecretString)
 }
-const secret = await asyncCall()
+const appSecret = await asyncCall()
 
 
-export default secret
-
+export { appSecret }

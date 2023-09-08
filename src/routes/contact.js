@@ -1,9 +1,11 @@
 import express from 'express'
 import { config } from '../utils/main.js'
 import * as axios from 'axios'
-import secret from '../utils/secrets.js'
+import { appSecret } from '../utils/secrets.js'
 const sections = config.sections
 const router = express.Router()
+
+console.log(appSecret)
 
 router.get('/items', function(req, res, next) {
   const merch = sections['merch']
@@ -17,7 +19,7 @@ router.post('/send-message', function (req, res, next) {
     const host = process.env.CONTACT_API_HOST || 'contact-api'
     const protocol = process.env.CONTACT_API_PROTOCOL || 'http'
     const api_url = `${protocol}://${host}/v1/contact/hubpub`
-    const auth = 'Basic ' + Buffer.from(secret.api_user + ':' + secret.api_pass).toString('base64')
+    const auth = 'Basic ' + Buffer.from(appSecret.api_user + ':' + appSecret.api_pass).toString('base64')
 
     axios.default({
       method: 'post',
