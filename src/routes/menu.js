@@ -1,14 +1,16 @@
 import express from 'express'
-import getRequest from '../utils/request.js'
+import makeRequest from '../utils/request.js'
 import network from '../utils/network.js'
 const router = express.Router()
 
-function makeRequest(uri, res) {
+console.log(network)
+
+function sendRequest(uri, res) {
   try {
     const apiUrl = `${network.urls.menuApi}${uri}`
-    getRequest(apiUrl, res)
+    makeRequest(apiUrl, res)
   } catch(error) {
-    console.log('makeRequest Failure: ' + error)
+    console.log('makeRequest Error: ' + error)
     res.status(500).json({
       'title': 'makeRequest Failure',
       'status': 500
@@ -18,8 +20,12 @@ function makeRequest(uri, res) {
 
 router.get('/categories', function (req, res, next) {
   const uri = `/v1/menu?location=thehubpub`
-  console.log(`CATEGORIES | GET | ${uri}`)
-  makeRequest(uri, res)
+  sendRequest(uri, res)
+})
+
+router.get('/sides', function (req, res, next) {
+  const uri = `/v1/menu?location=thehubpub`
+  sendRequest(uri, res)
 })
 
 router.get('/:page', function(req, res, next) {

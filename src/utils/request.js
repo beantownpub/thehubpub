@@ -1,26 +1,27 @@
 import * as axios from 'axios'
-import secret from './secrets.js'
+import { appSecret } from './secrets.js'
 
-const AUTH = 'Basic ' + Buffer.from(secret.api_user + ':' + secret.api_pass).toString('base64')
+console.log(appSecret)
 
+const AUTH = 'Basic ' + Buffer.from(appSecret.api_user + ':' + appSecret.api_pass).toString('base64')
 const OPTIONS = {
-  method: 'get',
-  headers: {'Content-Type': 'application/json', 'Authorization': AUTH},
-  url: ''
+    method: 'get',
+    headers: {'Content-Type': 'application/json', 'Authorization': AUTH},
+    url: ''
 }
 
 const RESPONSES = {
     apiError: {
-      'status': 500,
-      'message': 'API Error'
+        'status': 500,
+        'message': 'API Error'
     },
     axiosError: {
-      'status': 500,
-      'message': 'Axios Failure'
+        'status': 500,
+        'message': 'Axios Failure'
     },
     uncaughtError: {
-      'status': 500,
-      'message': 'No idea what caused this :('
+        'status': 500,
+        'message': 'No idea what caused this :('
     }
 }
 
