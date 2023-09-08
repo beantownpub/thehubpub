@@ -1,8 +1,8 @@
 aws:
-  accessKeyId:
-  region:
-  secretAccessKey:
-  secretName:
+  accessKeyId: ""
+  region: ""
+  secretAccessKey: ""
+  secretName: ""
 
 env: dev
 image:
@@ -16,9 +16,8 @@ istio:
   enabled: false
 
 containerPort: 3037
-portName: tcp-thehubpub
 
-regionCode:
+regionCode: ""
 replicaCount: 1
 resources:
   requests:

@@ -18,6 +18,10 @@ else ifeq ($(env), prod)
 	node_env = production
 endif
 
+## Install pre-commit hooks
+pre-commit/install:
+	pre-commit install --install-hooks --allow-missing-config -t pre-commit -t prepare-commit-msg
+
 sass:
 	sass ${PWD}/src/sass/style.sass ${PWD}/dist/public/css/style.css
 
