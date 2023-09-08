@@ -26,5 +26,4 @@ spec:
           remove:
           - "x-envoy-upstream-service-time"
           - "x-powered-by"
-          - "x-envoy-upstream-service-time"
 {{- end }}
