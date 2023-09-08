@@ -19,4 +19,6 @@ if (process.env.NODE_ENV === "development") {
   console.log(urls)
 }
 
+console.log(urls)
+
 export default urls
