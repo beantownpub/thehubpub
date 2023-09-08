@@ -55,3 +55,7 @@ helm/port_forward:
 
 stop_pf:
 		../scripts/stop_port_forward.sh $(port)
+
+## Create chart schema
+helm/schema_create:
+	cd helm/thehubpub && helm schema-gen values.yaml > values.schema.json

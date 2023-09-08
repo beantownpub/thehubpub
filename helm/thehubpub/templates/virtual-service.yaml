@@ -21,4 +21,10 @@ spec:
           number: {{ .Values.containerPort }}
         host: "{{ include "thehubpub.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local"
         subset: {{ include "thehubpub.fullname" . }}
+      headers:
+        response:
+          remove:
+          - "x-envoy-upstream-service-time"
+          - "x-powered-by"
+          - "x-envoy-upstream-service-time"
 {{- end }}

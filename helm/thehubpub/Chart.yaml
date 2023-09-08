@@ -2,7 +2,7 @@ apiVersion: v2
 name: thehubpub
 description: The Hub Pub site deployment
 type: application
-version: 0.1.11
-appVersion: 0.1.11
+version: 0.1.12
+appVersion: 0.1.12
 sources:
 - https://github.com/beantownpub/thehubpub

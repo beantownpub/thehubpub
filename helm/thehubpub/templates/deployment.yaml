@@ -41,7 +41,7 @@ spec:
         name: hubpub
         ports:
         - containerPort: {{ .Values.containerPort }}
-          name: {{ .Values.portName }}
+          name: {{ include "thehubpub.targetPort" . }}
           protocol: TCP
         securityContext:
           allowPrivilegeEscalation: false
@@ -59,7 +59,7 @@ spec:
         readinessProbe:
           httpGet:
             path: /healthz
-            port: {{ .Values.portName }}
+            port: {{ include "thehubpub.targetPort" . }}
           initialDelaySeconds: 15
           failureThreshold: 3
           periodSeconds: 10

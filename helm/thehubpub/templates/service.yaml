@@ -4,10 +4,10 @@ metadata:
   name: {{ include "thehubpub.fullname" . }}
 spec:
   ports:
-  - name: "tcp-{{ include "thehubpub.fullname" . }}"
+  - name: "http-{{ .Values.containerPort }}"
     port: {{ .Values.containerPort }}
-    targetPort: {{ .Values.containerPort }}
+    targetPort: {{ include "thehubpub.targetPort" . }}
   - name: http
     port: 80
-    targetPort: {{ .Values.containerPort }}
+    targetPort: {{ include "thehubpub.targetPort" . }}
   selector: {{ include "thehubpub.selectorLabels" . | nindent 6 }}
