@@ -1,6 +1,6 @@
-import React from 'react'
-import { Icon } from '../content/icons/main.js'
-import { StyledButton, iconStyle } from './styles.js'
+import React from "react"
+import { Icon } from "@jalgraves/react-components-library"
+import { StyledButton, iconStyle } from "./styles.js"
 
 export class ViewButton extends React.Component {
     constructor(props) {

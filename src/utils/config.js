@@ -1,5 +1,5 @@
 const CONFIG = {
-  "static_url": "https://static.dev.beantownpub.com",
+  "static_url": "https://static.prod.beantownpub.com",
   "urls": {
       "googleApi": "https://maps.googleapis.com/maps/api/",
       "contactApi": "https://contact-api.jalgraves.com/v1/contact/beantown",
@@ -39,8 +39,8 @@ const CONFIG = {
           "name": "/",
           "icon": "faHome",
           "text": "Home",
-          "menu_list": true,
-          "top_menu": false,
+          "menuList": true,
+          "topMenu": false,
           "metadata": {
               "title": "The Hub Pub",
               "description": "The friendliest pub in the hub!",
@@ -51,8 +51,8 @@ const CONFIG = {
           "name": "about",
           "icon": "faInfo",
           "text": "About",
-          "menu_list": true,
-          "top_menu": true,
+          "menuList": true,
+          "topMenu": true,
           "metadata": {
               "title": "About The Hub Pub",
               "description": "Information about The Hub Pub",
@@ -60,23 +60,23 @@ const CONFIG = {
           }
       },
       "contact": {
-          "name": "contact",
-          "icon": "faEnvelope",
-          "text": "Contact",
-          "menu_list": true,
-          "top_menu": true,
-          "metadata": {
-              "title": "Contact The Hub Pub",
-              "description": "The Hub Pub's contact information",
-              "keywords": ""
-          }
+        "name": "contact",
+        "icon": "faEnvelope",
+        "text": "Contact",
+        "menuList": true,
+        "topMenu": true,
+        "metadata": {
+          "title": "Contact The Hub Pub",
+          "description": "The Hub Pub's contact information",
+          "keywords": ""
+        }
       },
       "menu": {
           "name": "menu",
           "icon": "faUtensils",
           "text": "Menu",
-          "menu_list": true,
-          "top_menu": true,
+          "menuList": true,
+          "topMenu": true,
           "metadata": {
               "title": "Hub Pub dining menu",
               "description": "Hub Pub's food menu. Appetizers, soups, salads, entrees, sandwiches and burgers",
@@ -87,8 +87,8 @@ const CONFIG = {
           "name": "parties",
           "icon": "faUsers",
           "text": "Parties",
-          "menu_list": true,
-          "top_menu": true,
+          "menuList": true,
+          "topMenu": true,
           "metadata": {
               "title": "Private Parties",
               "description": "Hub Pub private events",
@@ -99,8 +99,8 @@ const CONFIG = {
           "name": "https://www.facebook.com/thehubpub/",
           "icon": "faFacebook",
           "text": "Facebook",
-          "menu_list": true,
-          "top_menu": false,
+          "menuList": true,
+          "topMenu": false,
           "metadata": {
               "title": "About The Hub Pub",
               "description": "",

@@ -1,9 +1,9 @@
-import styled from 'styled-components'
+import styled from "styled-components"
 
 export const iconStyle = {
-    margin: 'auto .5rem',
-    color: '#e6cb00',
-    fontSize: '1rem'
+    margin: "auto .5rem",
+    color: "#e6cb00",
+    fontSize: "1rem"
 }
 
 export const StyledButton = styled.div`
