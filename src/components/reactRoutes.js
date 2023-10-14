@@ -9,6 +9,7 @@ import { ContactInfo } from './content/contact/main.js'
 import { FoodMenu } from './foodMenus/main.js'
 import { Home } from './content/main.js'
 import { PrivateParties } from './content/parties/main.js'
+// import { ContactForm } from "@jalgraves/react-components-library"
 
 export default function ReactRoutes() {
   return (

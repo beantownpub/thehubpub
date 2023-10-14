@@ -29,6 +29,7 @@ const CONFIG = {
   },
   "fonts": {
       "headers": "'Poppins', sans-sefif",
+      "footer": "'Raleway', Arial, sans-serif",
       "content": "'Lato', sans-serif",
       "headline": "'Poppins', sans-serif",
       "gothamUltra": "'gotham-narrow-ultra', sans-sefif",

@@ -55,6 +55,10 @@ docker/run:
 		-e AWS_SECRET_NAME="${AWS_SECRET_NAME}" \
 		$(image_name):$(image_tag)
 
+## Stop docker container
+docker/stop:
+	docker rm -f $(image_name)
+
 clean:
 	rm -rf node_modules/
 

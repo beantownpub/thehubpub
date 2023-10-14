@@ -1,13 +1,12 @@
 import React from "react"
-import { StyledContentContainer } from "../styles.js"
-// import { Map } from "./map"
+import { ContentSection } from "@jalgraves/react-components-library"
 import { ContentContainer } from "../main.js"
 // import { config } from "../../../utils/main.js"
-// const COLORS = config.colors
 
-const info = () => {
+export const ContactInfo = () => {
   return (
-    <ContentContainer>
+    <ContentSection display="flex" flexFlow="column wrap">
+      <ContentContainer>
       <h1>Contact Hub Pub</h1>
       <h3>Email</h3>
       <p>hubpubboston@gmail.com</p>
@@ -16,14 +15,7 @@ const info = () => {
       <h3>Address</h3>
       <p>18 Province Street<br />Boston MA, 02108</p>
       <h6>MRJ INC. HUB PUB DBA</h6>
-    </ContentContainer>
-  )
-}
-
-export const ContactInfo = () => {
-  return (
-    <StyledContentContainer margin="5rem auto auto auto">
-      {info()}
-    </StyledContentContainer>
+      </ContentContainer>
+    </ContentSection>
   )
 }
