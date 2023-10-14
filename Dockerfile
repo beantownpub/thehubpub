@@ -17,6 +17,7 @@ ENV NODE_ENV=${node_env}
 ENV VERSION=${version}
 
 COPY ./package* /app/
+COPY ./.npmrc /app/
 WORKDIR /app
 RUN npm ci --save-dev --production=false
 COPY . ./

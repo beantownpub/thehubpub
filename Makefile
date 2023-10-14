@@ -7,6 +7,7 @@ MAKE_FILES = ${MAKE_PATH}/helm/thehubpub/Makefile ${MAKE_PATH}/Makefile
 
 dockerhub ?= jalgraves
 image_name ?= thehubpub
+port ?= 3037
 version ?= $(shell jq -r .version package.json | tr -d '"')
 git_hash = $(shell git rev-parse --short HEAD)
 
@@ -41,6 +42,22 @@ publish: build
 latest:
 	docker tag $(image_name):$(version) $(dockerhub)/$(image_name):latest
 	docker push $(dockerhub)/$(image_name):latest
+
+## Start docker container
+docker/run:
+	docker run \
+		--rm \
+		--name $(image_name) \
+		-p $(port):$(port) \
+		-e AWS_DEFAULT_REGION="us-east-2" \
+		-e AWS_ACCESS_KEY_ID="${AWS_ACCESS_KEY_ID}" \
+		-e AWS_SECRET_ACCESS_KEY="${AWS_SECRET_ACCESS_KEY}" \
+		-e AWS_SECRET_NAME="${AWS_SECRET_NAME}" \
+		$(image_name):$(image_tag)
+
+## Stop docker container
+docker/stop:
+	docker rm -f $(image_name)
 
 clean:
 	rm -rf node_modules/

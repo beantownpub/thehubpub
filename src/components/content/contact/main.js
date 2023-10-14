@@ -1,29 +1,21 @@
-import React from 'react'
-import { StyledContentContainer } from '../styles.js'
-// import { Map } from './map'
-import { ContentContainer } from '../main.js'
-// import { config } from '../../../utils/main.js'
-// const COLORS = config.colors
-
-const info = () => {
-    return (
-        <ContentContainer>
-            <h1>Contact Hub Pub</h1>
-            <h3>Email</h3>
-            <p>hubpubboston@gmail.com</p>
-            <h3>Call</h3>
-            <p>617-227-8952</p>
-            <h3>Address</h3>
-            <p>18 Province Street<br />Boston MA, 02108</p>
-            <h6>MRJ INC. HUB PUB DBA</h6>
-        </ContentContainer>
-    )
-}
+import React from "react"
+import { ContentSection } from "@jalgraves/react-components-library"
+import { ContentContainer } from "../main.js"
+// import { config } from "../../../utils/main.js"
 
 export const ContactInfo = () => {
-    return (
-        <StyledContentContainer margin="5rem auto auto auto">
-            {info()}
-        </StyledContentContainer>
-    )
+  return (
+    <ContentSection display="flex" flexFlow="column wrap">
+      <ContentContainer>
+      <h1>Contact Hub Pub</h1>
+      <h3>Email</h3>
+      <p>hubpubboston@gmail.com</p>
+      <h3>Call</h3>
+      <p>617-227-8952</p>
+      <h3>Address</h3>
+      <p>18 Province Street<br />Boston MA, 02108</p>
+      <h6>MRJ INC. HUB PUB DBA</h6>
+      </ContentContainer>
+    </ContentSection>
+  )
 }

@@ -108,3 +108,5 @@ dist/public/js
 # Other
 .scrap
 .sass-cache/
+.npmrc
+.envrc
