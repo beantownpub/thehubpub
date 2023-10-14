@@ -33,6 +33,7 @@ export const PrivateParties = () => {
         h2FontSize="2rem"
         h2FontWeight="bold"
         h2Margin="auto"
+        h2Padding="1rem"
         margin="8rem auto 2rem auto"
         maxWidth="95vw"
         outline={`.2rem solid ${COLORS.yellow}`}
@@ -61,7 +62,7 @@ export const PrivateParties = () => {
           buttonLetterSpacing=".3rem"
           labelFontWeight="bold"
           labelLetterSpacing=".3rem"
-          width="unset"
+          width="100%"
         />
       </ContentSection>
     </ContentSection>
