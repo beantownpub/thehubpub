@@ -5,8 +5,6 @@ import { appSecret } from '../utils/secrets.js'
 const sections = config.sections
 const router = express.Router()
 
-console.log(appSecret)
-
 router.get('/items', function(req, res, next) {
   const merch = sections['merch']
   res.set('Cookie', req.cookies.cart)

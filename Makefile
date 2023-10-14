@@ -82,7 +82,7 @@ help/generate:
 	{ lastLine = $$0 }' $(MAKE_FILES) | sort -u
 
 # Silence make output
-MAKEFLAGS += -s
+# MAKEFLAGS += -s
 
 helm/infra/update/%:
 	echo $@
