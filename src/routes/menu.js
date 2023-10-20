@@ -1,35 +1,46 @@
-import express from 'express'
-import makeRequest from '../utils/request.js'
-import { urls } from '../utils/network.js'
+import express from "express"
+import { urls } from "../utils/network.js"
+import * as axios from "axios"
 const router = express.Router()
+import { appSecret } from "../utils/secrets.js"
 
-console.log(urls)
+if (process.env.NODE_ENV === "development") {
+  console.log(appSecret)
+  console.log(urls)
+}
 
-function sendRequest(uri, res) {
+const AUTH = 'Basic ' + Buffer.from(appSecret.api_user + ':' + appSecret.api_pass).toString('base64')
+const axiosInstance = axios.default.create({
+  baseURL: urls.menuApi,
+  timeout: 1000,
+  headers: {'Content-Type': 'application/json', 'Authorization': AUTH}
+})
+
+async function getMenu(uri, res) {
   try {
-    const apiUrl = `${urls.menuApi}${uri}`
-    makeRequest(apiUrl, res)
-  } catch(error) {
-    console.log('makeRequest Error: ' + error)
+    const response = await axiosInstance.get(uri)
+    res.status(200).json({'status': 200, 'data': response.data})
+  } catch (error) {
+    console.log(`getMenu: ${error}`)
     res.status(500).json({
-      'title': 'makeRequest Failure',
-      'status': 500
+      "title": "Failed to get menu",
+      "status": 500
     })
   }
 }
 
-router.get('/categories', function (req, res, next) {
+router.get("/categories", function (req, res, next) {
   const uri = `/v1/menu?location=thehubpub`
-  sendRequest(uri, res)
+  getMenu(uri, res)
 })
 
-router.get('/sides', function (req, res, next) {
+router.get("/sides", function (req, res, next) {
   const uri = `/v1/menu?location=thehubpub`
-  sendRequest(uri, res)
+  getMenu(uri, res)
 })
 
-router.get('/:page', function(req, res, next) {
-  res.redirect(`/${req.params['page']}`)
+router.get("/:page", function(req, res, next) {
+  res.redirect(`/${req.params["page"]}`)
 })
 
 export default router

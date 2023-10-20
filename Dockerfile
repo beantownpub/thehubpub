@@ -29,6 +29,9 @@ FROM node:18.16.0-buster-slim
 ARG aws_region
 ENV AWS_DEFAULT_REGION=${aws_region}
 ENV TINI_VERSION v0.19.0
+ENV GIT_HASH=${git_hash}
+ENV NODE_ENV=${node_env}
+ENV VERSION=${version}
 
 RUN apt-get update && apt-get install -y curl
 COPY ./package* /app/
@@ -38,7 +41,8 @@ COPY . ./
 COPY --from=install /app/dist/public/js/main.js /app/dist/public/js/
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
 RUN chmod +x /tini
-ENTRYPOINT ["/tini", "-s", "--"]
-EXPOSE 3037
+ENTRYPOINT ["/tini", "--"]
+
 USER node
 CMD ["npm", "run", "start"]
+#CMD ["VERSION=wtf", "node", "--trace-warnings", "--unhandled-rejections=strict", "./bin/server"]

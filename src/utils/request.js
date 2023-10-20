@@ -43,6 +43,7 @@ function makeRequest(url, res) {
     .catch(error => {
       console.error('Axios Response Status - ' + error)
       if (error.response.status === 404) {
+        console.log("404 Error")
           res.status(200).json({'status': 200, 'data': []})
       } else {
           console.log('Axios Message - ' + error.message)

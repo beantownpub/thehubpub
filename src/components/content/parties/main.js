@@ -47,21 +47,29 @@ export const PrivateParties = () => {
         </article>
         <h2>
           <Icon
-            style={{fontSize: '1.75rem', margin: 'auto'}}
-            iconName={'faEnvelope'}
+            style={{fontSize: "1.75rem", margin: "auto"}}
+            iconName={"faEnvelope"}
           /> Request Info
         </h2>
         <ContactForm
-          contactReply="Request Received! We will respond to you as soon as we can. Thanks!"
+          contactReply="&#9733; Request Received! We will respond to you as soon as we can. Thanks!"
           display="flex"
           flexFlow="column wrap"
           fontFamily={FONTS.headers}
+          invalidEmailError="&#9757; Invalid email address"
+          invalidPhoneError="&#9757; Invalid phone number"
           buttonColor={COLORS.red}
           buttonFontColor={COLORS.white}
           buttonFontWeight="bold"
           buttonLetterSpacing=".3rem"
           labelFontWeight="bold"
           labelLetterSpacing=".3rem"
+          pFontColor={COLORS.yellow}
+          pFontFamily={FONTS.headers}
+          pLetterSpacing=".2rem"
+          pFontWeight="900"
+          pTextTransform="uppercase"
+          requiredFieldError="&#9757; This field is required"
           width="100%"
         />
       </ContentSection>

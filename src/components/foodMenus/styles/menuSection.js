@@ -7,7 +7,7 @@ export const StyledMenuSection = styled.div`
     display: flex;
     flex-flow: row wrap;
     margin: 1rem auto;
-    order: ${props => props.orderNumber || "0"};
+    order: ${props => props.$orderNumber || "0"};
     width: 95vw;
     .sectionTitle {
         display: flex;

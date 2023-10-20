@@ -1,5 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
+const package_json = require('./package.json');
 
 module.exports = env => {
   return {
@@ -8,8 +9,12 @@ module.exports = env => {
         "process.env.ENV": JSON.stringify(process.env.NODE_ENV),
         "process.env.GIT_HASH": JSON.stringify(process.env.GIT_HASH),
         "process.env.VERSION": JSON.stringify(process.env.VERSION)
-        
-      })
+      }),
+      new webpack.BannerPlugin({
+        banner: () => {
+          return `The Hub Pub version: ${package_json.version}`;
+        }
+      }),
     ],
     mode: process.env.NODE_ENV,
     entry: './src/index.js',

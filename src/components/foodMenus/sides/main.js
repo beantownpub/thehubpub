@@ -9,7 +9,7 @@ export const Sides = (props) => {
         let cnt = 1
         for (const side of Object.values(sides)) {
             sideList.push(
-                <StyledItem aria-labelledby="Side item" key={cnt} margin=".5rem" maxWidth="max-content"><p>{side}</p></StyledItem>
+                <StyledItem aria-labelledby="Side item" key={cnt} $margin=".5rem" $maxWidth="max-content"><p>{side}</p></StyledItem>
             )
             cnt++
         }

@@ -22,7 +22,7 @@ export const FoodMenu = () => {
     <div>
       {state.categories ?
         <CategoryCards categories={state.categories} sides={state.sides}/> :
-        <StyledContentContainer margin="10rem auto 3rem auto" fontColor={COLORS.white} backgroundColor={COLORS.black} maxWidth="30rem">
+        <StyledContentContainer $margin="10rem auto 3rem auto" $fontColor={COLORS.white} $backgroundColor={COLORS.black} $maxWidth="30rem">
           <h1>Error Loading Menu</h1>
         </StyledContentContainer>
       }

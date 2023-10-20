@@ -53,6 +53,12 @@ docker/run:
 		-e AWS_ACCESS_KEY_ID="${AWS_ACCESS_KEY_ID}" \
 		-e AWS_SECRET_ACCESS_KEY="${AWS_SECRET_ACCESS_KEY}" \
 		-e AWS_SECRET_NAME="${AWS_SECRET_NAME}" \
+		-e CONTACT_API_HOST="${CONTACT_API_HOST}" \
+		-e CONTACT_API_PROTOCOL="${CONTACT_API_PROTOCOL}" \
+		-e GIT_HASH="${git_hash}" \
+		-e MENU_API_HOST="${MENU_API_HOST}" \
+		-e MENU_API_PROTOCOL="${MENU_API_PROTOCOL}" \
+		-e VERSION="${version}" \
 		$(image_name):$(image_tag)
 
 ## Stop docker container

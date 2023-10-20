@@ -4,21 +4,21 @@ const COLORS = config.colors
 const FONTS = config.fonts
 
 export const StyledContentContainer = styled.div`
-    background-color: ${props => props.backgroundColor || COLORS.backgroundGray };
+    background-color: ${props => props.$backgroundColor || COLORS.backgroundGray };
     border: ${props => props.border || `.1rem solid ${COLORS.borderGray}`};
     box-shadow: ${props => props.boxShadow || `0px 5px 20px 0px ${COLORS.boxShadowGray}`};
     border-radius: .4rem;
-    color: ${props => props.fontColor || "unset"};
+    color: ${props => props.$fontColor || "unset"};
     display: flex;
     flex-flow: column wrap;
-    font-family: ${props => props.fontFamily || "unset"};
-    margin: ${props => props.margin || "unset"};
-    max-width: ${props => props.maxWidth || "unset"};
+    font-family: ${props => props.$fontFamily || "unset"};
+    margin: ${props => props.$margin || "unset"};
+    max-width: ${props => props.$maxWidth || "unset"};
     padding: ${props => props.padding || "0"};
     text-transform: ${props => props.textTransform || "unset"};
     width: ${props => props.width || "100%"};
     h1 {
-        color: ${props => props.fontColor || "unset"};
+        color: ${props => props.$fontColor || "unset"};
         font-family: ${FONTS.headers};
         letter-spacing: .25rem;
         line-height: 170%;

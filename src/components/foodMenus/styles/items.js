@@ -11,7 +11,7 @@ export const StyledItem = styled.div`
     display: flex;
     flex-flow: row wrap;
     margin: ${props => props.margin || ".25rem auto" };
-    max-width: ${props => props.maxWidth || "unset" };
+    max-width: ${props => props.$maxWidth || "unset" };
     padding: .5rem;
     width: 99%;
     h2 {
