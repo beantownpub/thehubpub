@@ -26,9 +26,10 @@ RUN npx webpack --config webpack.config.cjs && \
     rm -rf node_modules
 
 FROM node:18.16.0-buster-slim
-ARG aws_region
-ENV AWS_DEFAULT_REGION=${aws_region}
-ENV TINI_VERSION v0.19.0
+ARG git_hash
+ARG node_env
+ARG version
+ENV TINI_VERSION=v0.19.0
 ENV GIT_HASH=${git_hash}
 ENV NODE_ENV=${node_env}
 ENV VERSION=${version}

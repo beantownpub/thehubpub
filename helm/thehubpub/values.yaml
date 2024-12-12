@@ -1,8 +1,12 @@
 aws:
   accessKeyId: ""
   region: ""
+  regionCode: 
   secretAccessKey: ""
   secretName: ""
+
+externalSecrets:
+  enabled:
 
 env: dev
 image:
@@ -17,11 +21,13 @@ istio:
 
 containerPort: 3037
 
+logLevel:
+
 regionCode: ""
 replicaCount: 1
 resources:
   requests:
-    cpu: 50m
+    # cpu: 50m
     memory: 100Mi
   limits:
     memory: 1Gi

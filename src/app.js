@@ -22,7 +22,9 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 // end new shit
 
-app.use(morgan('dev'))
+const LOG_LEVEL = process.env.LOG_LEVEL || 'dev'
+
+app.use(morgan(LOG_LEVEL))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, '../dist/public')))

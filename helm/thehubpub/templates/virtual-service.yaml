@@ -6,7 +6,7 @@ metadata:
 spec:
   hosts:
   - "{{ include "thehubpub.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local"
-  - "{{ include "thehubpub.fullname" . }}.{{ .Values.regionCode }}.{{ .Release.Namespace }}.aws.beantownpub.com"
+  - "{{ include "thehubpub.fullname" . }}.{{ .Release.Namespace }}.{{ .Values.aws.regionCode }}.aws.beantownpub.com"
   - "demo.{{ .Release.Namespace }}.thehubpub.com"
   - "thehubpub.com"
   - "www.thehubpub.com"

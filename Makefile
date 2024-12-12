@@ -5,18 +5,25 @@ export SELF ?= $(MAKE)
 
 MAKE_FILES = ${MAKE_PATH}/helm/thehubpub/Makefile ${MAKE_PATH}/Makefile
 
-dockerhub ?= jalgraves
-image_name ?= thehubpub
-port ?= 3037
+dockerhub ?= ${DOCKERHUB}
+name ?= thehubpub
+image_name ?= $(name)
+port ?= ${THEHUBPUB_PORT}
 version ?= $(shell jq -r .version package.json | tr -d '"')
 git_hash = $(shell git rev-parse --short HEAD)
 
 ifeq ($(env),dev)
 	image_tag = $(version)-$(git_hash)
 	node_env = development
+	context = ${DEV_CONTEXT}
+	namespace = ${DEV_NAMESPACE}
+	region_code = ${DEV_REGION_CODE}
 else ifeq ($(env), prod)
 	image_tag = $(version)
 	node_env = production
+	context = ${PROD_CONTEXT}
+	namespace = ${PROD_NAMESPACE}
+	region_code = ${PROD_REGION_CODE}
 endif
 
 ## Install pre-commit hooks
@@ -90,6 +97,3 @@ help/generate:
 # Silence make output
 # MAKEFLAGS += -s
 
-helm/infra/update/%:
-	echo $@
-	cd apps/helm-apps/infrastructure/$* && ls -l

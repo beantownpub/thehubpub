@@ -2,14 +2,14 @@ import express from "express"
 import { urls } from "../utils/network.js"
 import * as axios from "axios"
 const router = express.Router()
-import { appSecret } from "../utils/secrets.js"
 
 if (process.env.NODE_ENV === "development") {
-  console.log(appSecret)
   console.log(urls)
 }
 
-const AUTH = 'Basic ' + Buffer.from(appSecret.api_user + ':' + appSecret.api_pass).toString('base64')
+const API_USERNAME = process.env.API_USERNAME
+const API_PASSWORD = process.env.API_PASSWORD
+const AUTH = 'Basic ' + Buffer.from(API_USERNAME + ':' + API_PASSWORD).toString('base64')
 const axiosInstance = axios.default.create({
   baseURL: urls.menuApi,
   timeout: 1000,

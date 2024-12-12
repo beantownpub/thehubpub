@@ -1,9 +1,12 @@
 import express from 'express'
 import { config } from '../utils/main.js'
 import * as axios from 'axios'
-import { appSecret } from '../utils/secrets.js'
 const sections = config.sections
 const router = express.Router()
+
+const API_USERNAME = process.env.API_USERNAME
+const API_PASSWORD = process.env.API_PASSWORD
+const AUTH = 'Basic ' + Buffer.from(API_USERNAME + ':' + API_PASSWORD).toString('base64')
 
 router.get('/items', function(req, res, next) {
   const merch = sections['merch']
@@ -14,16 +17,14 @@ router.get('/items', function(req, res, next) {
 router.post('/send-message', function (req, res, next) {
   console.log(req.body)
   try {
-    const host = process.env.CONTACT_API_HOST || 'contact-api'
+    const host = process.env.CONTACT_API_HOST
     const protocol = process.env.CONTACT_API_PROTOCOL || 'http'
     const api_url = `${protocol}://${host}/v1/contact/hubpub`
-    const auth = 'Basic ' + Buffer.from(appSecret.api_user + ':' + appSecret.api_pass).toString('base64')
-
     axios.default({
       method: 'post',
       url: api_url,
       data: req.body,
-      headers: {'Content-Type': 'application/json', 'Authorization': auth}
+      headers: {'Content-Type': 'application/json', 'Authorization': AUTH}
     })
       .then(response => {
         if (response.status === 200) {

@@ -1,19 +1,6 @@
 .PHONY: all test clean
 
-
-name ?= thehubpub
-image ?= hubpub
-port ?= 3037
-tag ?= $(shell grep 'appVersion:' Chart.yaml | cut -f 2 -d' ')
 SHELL := /bin/bash
-
-ifeq ($(env),dev)
-	context = ${DEV_CONTEXT}
-	namespace = ${DEV_NAMESPACE}
-else ifeq ($(env),prod)
-	context = ${PROD_CONTEXT}
-	namespace = ${PROD_NAMESPACE}
-endif
 
 package:
 		helm package .
@@ -22,7 +9,7 @@ helm/context:
 	kubectl config use-context $(context)
 
 ## Install Helm chart
-helm/install: helm/context
+helm/install:
 	cd helm/thehubpub && \
 		helm upgrade --install $(name) . \
 		--namespace $(namespace) \
@@ -31,6 +18,19 @@ helm/install: helm/context
 		--set aws.secretAccessKey=${AWS_SECRET_ACCESS_KEY} \
 		--set aws.region=${AWS_DEFAULT_REGION} \
 		--set env=$(env) \
+		--debug
+
+## Install beantown frontend in K8s production cluster
+helm/install/production:
+	helm upgrade --install $(name) helm/thehubpub/ \
+		--kubeconfig="${HOME}"/.kube/$(kubeconfig) \
+		--namespace $(namespace) \
+		--set image.tag=$(image_tag) \
+		--set aws.regionCode=$(region_code) \
+		--set env=$(env) \
+		--set logLevel=tiny \
+		--set istio.enabled=true \
+		--set externalSecrets.enabled=true \
 		--debug
 
 ## Uninstall beantown frontend from K8s cluster
