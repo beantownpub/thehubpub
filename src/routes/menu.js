@@ -1,6 +1,14 @@
 import express from "express"
 import { urls } from "../utils/network.js"
 import * as axios from "axios"
+import fs from "fs"
+import path from "path"
+import { fileURLToPath } from "url"
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+const LOCAL_MENU_PATH = path.join(__dirname, "../../data/menus/thehubpub.json")
+
 const router = express.Router()
 
 if (process.env.NODE_ENV === "development") {
@@ -21,11 +29,15 @@ async function getMenu(uri, res) {
     const response = await axiosInstance.get(uri)
     res.status(200).json({'status': 200, 'data': response.data})
   } catch (error) {
-    console.log(`getMenu: ${error}`)
-    res.status(500).json({
-      "title": "Failed to get menu",
-      "status": 500
-    })
+    console.warn(`Menu API unavailable (${error.message}), falling back to local JSON`)
+    try {
+      const raw = fs.readFileSync(LOCAL_MENU_PATH, "utf8")
+      const data = JSON.parse(raw)
+      res.status(200).json({"status": 200, "data": data})
+    } catch (fileError) {
+      console.error("Failed to load local menu fallback:", fileError)
+      res.status(500).json({"title": "Menu unavailable", "status": 500})
+    }
   }
 }
 

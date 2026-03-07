@@ -1,0 +1,338 @@
+{
+    "categories": {
+        "appetizers": {
+            "description": "",
+            "location": "thehubpub",
+            "is_active": true,
+            "order_number": 0,
+            "items": [
+                {
+                    "name": "Colossal Pretzel",
+                    "description": "Just like Fenway Park! Served with a side of honey mustard",
+                    "price": 9.99,
+                    "category_id": "appetizers",
+                    "is_active": false,
+                    "location": "thehubpub"
+                },
+                {
+                    "name": "Idaho Potato Skins",
+                    "description": "Topped with cheddar, jack cheese, scallions, and smoked bacon",
+                    "price": 11.99,
+                    "category_id": "appetizers",
+                    "is_active": true,
+                    "location": "thehubpub"
+                },
+                {
+                    "name": "Wing Dings",
+                    "description": "Battered chicken wings cooked to a golden brown. Available buffalo style upon request",
+                    "price": 11.99,
+                    "category_id": "appetizers",
+                    "is_active": true,
+                    "location": "thehubpub"
+                },
+                {
+                    "name": "Mozzarella Sticks",
+                    "description": "Made with fresh mozzarella cheese, these sticks come dipped in a golden batter for a crunchy exterior. Served with homemade marinara sauce",
+                    "price": 11.99,
+                    "category_id": "appetizers",
+                    "is_active": true,
+                    "location": "thehubpub"
+                },
+                {
+                    "name": "Boneless Buffalo Wings",
+                    "description": "Tender chicken strips tossed in our signature buffalo sauce. Served with a side of blue cheese",
+                    "price": 11.99,
+                    "category_id": "appetizers",
+                    "is_active": true,
+                    "location": "thehubpub"
+                },
+                {
+                    "name": "Fried Shrimp",
+                    "description": "Deliciously crispy and seasoned to perfection. Served with a side of our cocktail sauce",
+                    "price": 12.99,
+                    "category_id": "appetizers",
+                    "is_active": true,
+                    "location": "thehubpub"
+                },
+                {
+                    "name": "Chicken Tenders",
+                    "description": "Tender boneless chicken strips battered and cooked with a crispy outside and juicy inside",
+                    "price": 11.99,
+                    "category_id": "appetizers",
+                    "is_active": true,
+                    "location": "thehubpub"
+                },
+                {
+                    "name": "Popcorn Chicken",
+                    "description": "Bite sized tender chicken served with a hint of cajun spice. Served with a side of our sweet chili sauce",
+                    "price": 11.99,
+                    "category_id": "appetizers",
+                    "is_active": true,
+                    "location": "thehubpub"
+                },
+                {
+                    "name": "Fiesta Poppers",
+                    "description": "Jalapeño pepper halves stuffed with a tangy chili cream cheese, wrapped in a crunchy breadcrumb",
+                    "price": 11.99,
+                    "category_id": "appetizers",
+                    "is_active": true,
+                    "location": "thehubpub"
+                },
+                {
+                    "name": "Chicken Fries",
+                    "description": "Made with white meat chicken, and coated in a light crispy breading seasoned with savory spices and herbs. Shaped like fries and perfect to dip in any of our delicious dipping sauces",
+                    "price": 10.99,
+                    "category_id": "appetizers",
+                    "is_active": true,
+                    "location": "thehubpub"
+                },
+                {
+                    "name": "Cheese Fries",
+                    "description": "Our famous crinkle cut fries topped with melted jack cheese and a side of gravy. Add bacon 3.00",
+                    "price": 11.99,
+                    "category_id": "appetizers",
+                    "is_active": true,
+                    "location": "thehubpub"
+                },
+                {
+                    "name": "Sliders",
+                    "description": "Choice of cheese burger, meatball, or fried chicken",
+                    "price": 11.99,
+                    "category_id": "appetizers",
+                    "is_active": true,
+                    "location": "thehubpub"
+                },
+                {
+                    "name": "Basket of Fries",
+                    "description": "Our famous crinkle cut fries",
+                    "price": 6.99,
+                    "category_id": "appetizers",
+                    "is_active": true,
+                    "location": "thehubpub"
+                },
+                {
+                    "name": "Basket of Onion Rings",
+                    "description": "Served with your choice of dipping sauce",
+                    "price": 7.99,
+                    "category_id": "appetizers",
+                    "is_active": true,
+                    "location": "thehubpub"
+                },
+                {
+                    "name": "Homemade Chips & Salsa",
+                    "description": "Tortilla chips and salsa made in house",
+                    "price": 8.99,
+                    "category_id": "appetizers",
+                    "is_active": true,
+                    "location": "thehubpub"
+                }
+            ]
+        },
+        "soups": {
+            "description": "",
+            "location": "thehubpub",
+            "is_active": true,
+            "order_number": 0,
+            "items": [
+                {
+                    "name": "Firey Pub Chili",
+                    "description": "Fresh ground sirloin, tomatoes, peppers, onions & beans. All this flavor topped with melted cheese Tortilla chips included for scooping",
+                    "price": 10.99,
+                    "category_id": "soups",
+                    "is_active": true,
+                    "location": "thehubpub"
+                },
+                {
+                    "name": "Clam Chowder",
+                    "description": "Thick, creamy, and chock-full of tender New England clams and diced tomatoes",
+                    "price": 7.99,
+                    "category_id": "soups",
+                    "is_active": true,
+                    "location": "thehubpub"
+                }
+            ]
+        },
+        "salads": {
+            "description": "",
+            "location": "thehubpub",
+            "is_active": true,
+            "order_number": 0,
+            "items": [
+                {
+                    "name": "Ceasar Salad",
+                    "description": "This Classic Caesar Salad with romaine lettuce, homemade croutons, Parmesan cheese. Add chicken 4.00. Add steak 8.00",
+                    "price": 11.99,
+                    "category_id": "salads",
+                    "is_active": true,
+                    "location": "thehubpub"
+                }
+            ]
+        },
+        "entrees": {
+            "description": "",
+            "location": "thehubpub",
+            "is_active": true,
+            "order_number": 0,
+            "items": [
+                {
+                    "name": "Country Fried Chicken",
+                    "description": "Boneless chicken breast battered and fried with a crispy exterior and juicy center. Serverd with gravy, veggie of the day, and one choice of side",
+                    "price": 17.99,
+                    "category_id": "entrees",
+                    "is_active": true,
+                    "location": "thehubpub"
+                },
+                {
+                    "name": "Marinated Steak Tips",
+                    "description": "Lightly seasoned choice cuts grilled to your liking. Served with veg of the day and choice of one side",
+                    "price": 21.99,
+                    "category_id": "entrees",
+                    "is_active": true,
+                    "location": "thehubpub"
+                },
+                {
+                    "name": "Fish & Chips",
+                    "description": "Fresh haddock battered and fried to a golden brown. Served with our famous fries and cole slaw",
+                    "price": 18.99,
+                    "category_id": "entrees",
+                    "is_active": true,
+                    "location": "thehubpub"
+                },
+                {
+                    "name": "BBQ Combo",
+                    "description": "Marinated steak tips and grilled chicken breast brushed with bbq sauce. Served with veggie of the day and your choice of side",
+                    "price": 18.99,
+                    "category_id": "entrees",
+                    "is_active": true,
+                    "location": "thehubpub"
+                },
+                {
+                    "name": "Chicken Parmesan",
+                    "description": "Fresh breaded chicken breast covered in tomato sauce, mozzarella,  and parmesan served with a side of pasta",
+                    "price": 17.99,
+                    "category_id": "entrees",
+                    "is_active": true,
+                    "location": "thehubpub"
+                }
+            ]
+        },
+        "burgers": {
+            "description": "Served with your choice of side",
+            "location": "thehubpub",
+            "is_active": true,
+            "order_number": 0,
+            "items": [
+                {
+                    "name": "Back Bay Burger",
+                    "description": "1/2Lb Patty of our hand packed ground beef. Topped with your choice of cheese, lettuce, and tomato",
+                    "price": 14.99,
+                    "category_id": "burgers",
+                    "is_active": true,
+                    "location": "thehubpub"
+                },
+                {
+                    "name": "Turkey Burger",
+                    "description": "Fresh ground turkey breast topped with your choice of cheese, lettuce, and tomato",
+                    "price": 14.99,
+                    "category_id": "burgers",
+                    "is_active": true,
+                    "location": "thehubpub"
+                },
+                {
+                    "name": "Burger Melt",
+                    "description": "1/2Lb Patty of our hand packed ground beef stuffed into our famous grilled cheese",
+                    "price": 14.99,
+                    "category_id": "burgers",
+                    "is_active": true,
+                    "location": "thehubpub"
+                }
+            ]
+        },
+        "sandwiches": {
+            "description": "Served on burger bun, french bread, white, wheat, or wrap with your choice of side",
+            "location": "thehubpub",
+            "is_active": true,
+            "order_number": 4,
+            "items": [
+                {
+                    "name": "Lobster Roll",
+                    "description": "Chunks of tender, sweet lobster tossed lightly in mayo served with lettuce on a grilled roll. Includes french fries and side of cole slaw",
+                    "price": 20.99,
+                    "category_id": "sandwiches",
+                    "is_active": true,
+                    "location": "thehubpub"
+                },
+                {
+                    "name": "Beacon Hill Club",
+                    "description": "1/2Lb Patty of our hand packed ground beef served on a triple 'deckah' of toast. Topped with your choice of cheese, lettuce, tomato, mayo and bacon",
+                    "price": 15.99,
+                    "category_id": "sandwiches",
+                    "is_active": true,
+                    "location": "thehubpub"
+                },
+                {
+                    "name": "Old Ironside",
+                    "description": "Marinated steak tips somthered with onions, peppers, and melted cheese on French bread",
+                    "price": 17.99,
+                    "category_id": "sandwiches",
+                    "is_active": true,
+                    "location": "thehubpub"
+                },
+                {
+                    "name": "Country Fried Chicken Club",
+                    "description": "Fried chicken breast topped with bacon, lettuce, tomato, and mayo",
+                    "price": 15.99,
+                    "category_id": "sandwiches",
+                    "is_active": true,
+                    "location": "thehubpub"
+                },
+                {
+                    "name": "Boston Common",
+                    "description": "Grilled bbq chicken topped with smoked bacon and melted swiss cheese",
+                    "price": 15.99,
+                    "category_id": "sandwiches",
+                    "is_active": true,
+                    "location": "thehubpub"
+                },
+                {
+                    "name": "Traditional B.L.T",
+                    "description": "An American classic! Bacon, lettuce, tomato, and mayo on your coice of white, wheat, or rye bread",
+                    "price": 13.99,
+                    "category_id": "sandwiches",
+                    "is_active": true,
+                    "location": "thehubpub"
+                },
+                {
+                    "name": "Grilled Cheese",
+                    "description": "Traditional grilled cheese sandwich. Choice of white, wheat, or rye bread and American, cheddar, Swiss, pepperjack, or provolone cheese",
+                    "price": 10.99,
+                    "category_id": "sandwiches",
+                    "is_active": true,
+                    "location": "thehubpub"
+                },
+                {
+                    "name": "North End",
+                    "description": "Homemade meatballs simmered in marinara sauce and topped with melted mozzarella cheese",
+                    "price": 14.99,
+                    "category_id": "sandwiches",
+                    "is_active": true,
+                    "location": "thehubpub"
+                },
+                {
+                    "name": "Hot Dogs",
+                    "description": "Two perfectly grilled hot dogs served on toasted rolls",
+                    "price": 10.99,
+                    "category_id": "sandwiches",
+                    "is_active": true,
+                    "location": "thehubpub"
+                }
+            ]
+        }
+    },
+    "sides": [
+        "mashed potatoes",
+        "cole slaw",
+        "veggie of the day",
+        "french fries"
+    ]
+}

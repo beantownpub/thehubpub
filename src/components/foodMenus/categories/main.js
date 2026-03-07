@@ -9,11 +9,11 @@ export const CategoryCards = (props) => {
   const categoryList = []
   if (categories) {
     let cnt = 1
-    for (const category of Object.values(categories)) {
+    for (const [name, category] of Object.entries(categories)) {
       categoryList.push(
         <CategoryCard
           description={category['description']}
-          name={category['name']}
+          name={name}
           isActive={category['is_active']}
           items={category['items']}
           key={category['id']}
