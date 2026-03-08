@@ -33,7 +33,8 @@ const CONFIG = {
       "content": "'Lato', sans-serif",
       "headline": "'Poppins', sans-serif",
       "gothamUltra": "'gotham-narrow-ultra', sans-sefif",
-      "title": "'satisfy', sans-serif"
+      "title": "'satisfy', sans-serif",
+      "script": "'satisfy', sans-serif"
   },
   "pages": {
       "index": {

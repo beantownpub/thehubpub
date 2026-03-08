@@ -25,21 +25,58 @@ const app = createRoot(container)
 const footer = createRoot(footerContainer)
 const topBar = createRoot(topBarContainer)
 
+const slideMenu = {
+  backgroundColor: COLORS.backgroundGray,
+  border: `.1rem solid ${COLORS.black}`,
+  fontColor: COLORS.dodgerBlue,
+  fontFamily: FONTS.content,
+  footer: {
+    text: `The Friendliest Pub in the Hub`,
+    fontFamily: FONTS.script,
+    fontColor: COLORS.dodgerBlue,
+    fontSize: "2rem",
+    fontWeight: "900",
+    textTransform: "none"
+  },
+
+  linkList: {
+    borderRadius: "4px",
+    fontFamily: FONTS.content,
+    fontColor: COLORS.black,
+    fontSize: "1.5rem",
+    fontWeight: "900",
+    outline: `1px solid ${COLORS.yellow}`,
+    margin: "2rem auto",
+    pages: PAGES,
+    position: "relative",
+    hoverColor: COLORS.dodgerBlue,
+    width: "100%",
+    iconStyle: {
+      color: COLORS.yellow,
+      fontSize: "1em"
+    }
+  },
+  header: {
+    fontFamily: FONTS.content,
+    imgSource: `/images/logos/thehubpub_logo.png`
+  }
+}
+
 topBar.render(
   <MainMenuBar
-    pages={PAGES}
+    barColor={COLORS.black}
     fontColor={COLORS.white}
     fontFamily={FONTS.content}
-    barColor={COLORS.black}
-    navBarLogoImgStyles={IMG_STYLES}
-    slideMenuBackgroundColor={COLORS.backgroundGray}
-    slideMenuFontColor={COLORS.dodgerBlue}
-    slideMenuFontFamily={FONTS.content}
-    slideMenuLinkListBorder={`.1rem solid ${COLORS.dodgerBlue}`}
-    slideMenuLinkListBorderRadius="4px"
+    hamburgerBackground={COLORS.white}
     hoverColor={COLORS.dodgerBlue}
-    mainMenuBarImgSource={`${config.static_url}/img/logos/thehubpub_second_logo.png`}
-    slideMenuLogoImgSource={`${config.static_url}/img/logos/thehubpub_logo.png`}
+    mainMenuBarBorderBottom={`1px solid ${COLORS.white}`}
+    mainMenuBarBoxShadow={`2px 2px 6px ${COLORS.darkGray}`}
+    mainMenuBarImgSource={`/images/logos/thehubpub_second_logo.png`}
+    navBarLogoImgStyles={IMG_STYLES}
+    pages={PAGES}
+    slideMenu={slideMenu}
+    slideMenuBackgroundColor={COLORS.topMenuBackground}
+    slideMenuLogoImgSource={`/images/script_logo.png`}
   />
 )
 
